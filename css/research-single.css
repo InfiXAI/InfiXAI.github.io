@@ -652,7 +652,8 @@
 /* Responsive Design - Scoped */
 @media (max-width: 768px) {
   .research-single-container {
-    padding-top: 56px;
+    padding-top: 42px;
+    max-width: 94%;
   }
 
   .research-single-layout {
@@ -701,6 +702,7 @@
   .research-single-layout {
     margin: 0.5rem;
     padding: 1rem;
+    max-width: 100%;
   }
 
   .research-article-title {
