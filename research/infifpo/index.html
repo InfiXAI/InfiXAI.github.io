@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<title>InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models | InfiX-AI</title>
+<meta name="description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
+<meta name="keywords" content="Model Fusion,Preference Optimization">
+<meta name="author" content="InfiX.ai Team">
+
+
+<meta property="og:title" content="InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models">
+<meta property="og:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://infixai.github.io/research/infifpo/">
+<meta property="og:site_name" content="InfiX-AI">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models">
+<meta name="twitter:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
+
+
+
+<link rel="canonical" href="http://infixai.github.io/research/infifpo/">
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+    <link rel="stylesheet" href="/css/research.css">
+    <link rel="stylesheet" href="/css/research-single.css">
+    
+    
+</head>
+<body>
+    <nav class="navbar scrolled">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="http://infixai.github.io/" class="brand-link">
+                <picture>
+                    <img src="/images/infix-ai-logo.png" 
+                         alt="InfiX.ai" 
+                         class="brand-logo-img"
+                         onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                </picture>
+                
+                <div class="brand-logo-fallback" style="display: none;">
+                    <span class="logo-text">InfiX.ai</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            
+                
+                    <a href="/" class="nav-link">
+                        Home
+                    </a>
+                
+            
+                
+                    <a href="/research/" class="nav-link">
+                        Research
+                    </a>
+                
+            
+                
+                    <a href="/about/" class="nav-link">
+                        About Us
+                    </a>
+                
+            
+                
+                    <a href="https://github.com/InfiXAI" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-github" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="nav-text">GitHub</span>
+                        
+                    </a>
+                
+            
+                
+                    <a href="https://huggingface.co/InfiX-ai" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-huggingface" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM6.624 17.043c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zm10.729 0c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zM12 14.908c-1.141 0-2.067-.926-2.067-2.067S10.859 10.774 12 10.774s2.067.926 2.067 2.067S13.141 14.908 12 14.908z"/>
+                            </svg>
+                            <span class="nav-text">HuggingFace</span>
+                        
+                    </a>
+                
+            
+        </div>
+    </div>
+</nav>
+    
+    <main class="page-content">
+        
+
+<div class="research-single-container">
+    <div class="research-single-layout">
+       
+        
+        <header class="research-article-header">
+            
+            <div class="research-article-meta">
+                <span class="research-article-category" data-category="publication">
+                    PUBLICATION
+                </span>
+                <time class="research-article-date" datetime="2025-01-17">
+                    January 17, 2025
+                </time>
+            </div>
+            
+            
+            <h1 class="research-article-title">InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models</h1>
+            
+            
+            
+            
+            
+            
+            <div class="research-article-tags">
+                
+                    <span class="research-article-tag">Model Fusion</span>
+                
+                    <span class="research-article-tag">Preference Optimization</span>
+                
+                    <span class="research-article-tag">Direct Preference Optimization</span>
+                
+                    <span class="research-article-tag">Large Language Models</span>
+                
+                    <span class="research-article-tag">Alignment</span>
+                
+            </div>
+            
+            
+            
+            <div class="research-article-links">
+                
+                <a href="https://arxiv.org/abs/2501.xxxxx" target="_blank" rel="noopener noreferrer" class="research-external-link research-arxiv-link">
+                    <svg class="research-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10,9 9,9 8,9"/>
+                    </svg>
+                    View on arXiv
+                </a>
+                
+                
+                
+                <a href="https://github.com/Reallm-Labs/InfiFPO" target="_blank" rel="noopener noreferrer" class="research-external-link research-github-link">
+                    <svg class="research-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 0-8-3-8-8 0-5.5 2.5-10 7-10 3.5 0 6.5 2.5 7 6.5 0 .5.5 1 1 1s1-.5 1-1c-.5-5-4.5-8.5-9-8.5-6 0-10 5-10 11 0 6 4 10 10 10 2 0 4-.5 5.5-1.5"/>
+                        <path d="M15 7h4l-4-4"/>
+                    </svg>
+                    View on GitHub
+                </a>
+                
+                
+                
+                <a href="https://huggingface.co/InfiXAI/InfiFPO" target="_blank" rel="noopener noreferrer" class="research-external-link research-huggingface-link">
+                    <svg class="research-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                        <line x1="9" y1="9" x2="9.01" y2="9"/>
+                        <line x1="15" y1="9" x2="15.01" y2="9"/>
+                    </svg>
+                    View on Hugging Face
+                </a>
+                
+            </div>
+        </header>
+
+        
+        <article class="research-article-content">
+            <p>We propose <strong>InfiFPO</strong>, a principled and efficient framework for performing model fusion during the preference alignment phase. Our key insight is that the reference model in preference optimization (e.g., in DPO) can be replaced with a fused source model, thereby enabling the pivot model to learn not only from preference data but also from the probabilistic behaviors of multiple source models.</p>
+<p><img src="assets/exp.png" alt="InfiFPO"></p>
+<p>Comprehensive experiments on 11 widely-used benchmarks demonstrate that <strong>InfiFPO</strong> consistently outperforms existing model fusion and preference optimization methods. When using Phi-4 as the pivot model, <strong>InfiFPO</strong> improve its average performance from 79.95 to 83.33 on 11 benchmarks, significantly improving its capabilities in mathematics, coding, and reasoning tasks.</p>
+<h2 id="-usage">🕹️ Usage</h2>
+<h3 id="installation">Installation</h3>
+<pre tabindex="0"><code>git clone https://github.com/Reallm-Labs/InfiFPO.git
+cd InfiFPO
+conda create -n infifpo python==3.10
+conda activate infifpo
+pip install -r requirements.txt
+</code></pre><h3 id="training">Training</h3>
+<p>Our training code is primarily based on the <code>dpo_trainer</code> from the <a href="https://github.com/huggingface/trl">TRL library</a> by Hugging Face. Specifically, we reference the implementation in <a href="https://github.com/huggingface/trl/blob/main/trl/trainer/dpo_trainer.py">dpo_trainer.py</a>.</p>
+<ul>
+<li>Check the <code>run.sh</code> file</li>
+<li>If you&rsquo;re using a SLURM cluster, check the <code>run-slurm.sh</code> file instead</li>
+</ul>
+<h2 id="supported-dataset-format">Supported Dataset Format</h2>
+<p>InfiFPO now supports datasets with the following structure and fields:</p>
+<ul>
+<li><strong><code>chosen</code></strong>: The preferred response</li>
+<li><strong><code>rejected</code></strong>: The non-preferred response</li>
+</ul>
+<h3 id="pre-calculated-log-probabilities">Pre-calculated Log Probabilities</h3>
+<h4 id="pivot-model-metrics">Pivot Model Metrics</h4>
+<ul>
+<li><strong><code>ref_chosen_logps</code></strong>: Log probabilities of the <code>chosen</code> response calculated by the pivot model</li>
+<li><strong><code>ref_rejected_logps</code></strong>: Log probabilities of the <code>rejected</code> response calculated by the pivot model</li>
+<li><strong><code>ref_mean_chosen_logps</code></strong>: Mean log probabilities of the <code>chosen</code> response calculated by the pivot model</li>
+<li><strong><code>ref_mean_rejected_logps</code></strong>: Mean log probabilities of the <code>rejected</code> response calculated by the pivot model</li>
+</ul>
+<h4 id="source-model-metrics">Source Model Metrics</h4>
+<ul>
+<li><strong><code>fuse_chosen_logps</code></strong>: Log probabilities of the <code>chosen</code> response calculated by the source model</li>
+<li><strong><code>fuse_rejected_logps</code></strong>: Log probabilities of the <code>rejected</code> response calculated by the source model</li>
+<li><strong><code>fuse_mean_chosen_logps</code></strong>: Mean log probabilities of the <code>chosen</code> response calculated by the source model</li>
+<li><strong><code>fuse_mean_rejected_logps</code></strong>: Mean log probabilities of the <code>rejected</code> response calculated by the source model</li>
+</ul>
+<h3 id="example">Example</h3>
+<pre tabindex="0"><code>    {
+        &#34;chosen&#34;: [
+            {
+                &#34;role&#34;: &#34;user&#34;,
+                &#34;content&#34;: &#34;A batch of barley seeds had the following germination test results under the same conditions:\n\n| Number of Seeds | $50$ | $100$ | $300$ | $400$ | $600$ | $1000$ |\n|-----------------|------|-------|-------|-------|-------|--------|\n| Germination Frequency | $47$ | $96$ | $284$ | $380$ | $571$ | $948$ |\n\nEstimate the probability of germination for this batch of barley seeds. (Round the result to $0.01$)&#34;
+            },
+            {
+                &#34;role&#34;: &#34;assistant&#34;,
+                &#34;content&#34;: &#34;To estimate the probability of germination for the batch of barley seeds, we need to calculate the overall germination rate across all the samples. This involves finding the total number of seeds that germinated and dividing it by the total number of seeds tested.\n\nFirst, we calculate the total number of seeds:\n\n\\[\n50 + 100 + 300 + 400 + 600 + 1000 = 2450\n\\]\n\nNext, we calculate the total number of seeds that germinated:\n\n\\[\n47 + 96 + 284 + 380 + 571 + 948 = 2326\n\\]\n\nNow, we find the probability of germination by dividing the total number of germinated seeds by the total number of seeds:\n\n\\[\n\\text{Probability of germination} = \\frac{2326}{2450}\n\\]\n\nPerform the division:\n\n\\[\n\\frac{2326}{2450} \\approx 0.9493877551\n\\]\n\nRounding this to two decimal places gives:\n\n\\[\n0.95\n\\]\n\nThus, the estimated probability of germination for this batch of barley seeds is \\(\\boxed{0.95}\\).&#34;
+            }
+        ],
+        &#34;rejected&#34;: [
+            {
+                &#34;role&#34;: &#34;user&#34;,
+                &#34;content&#34;: &#34;A batch of barley seeds had the following germination test results under the same conditions:\n\n| Number of Seeds | $50$ | $100$ | $300$ | $400$ | $600$ | $1000$ |\n|-----------------|------|-------|-------|-------|-------|--------|\n| Germination Frequency | $47$ | $96$ | $284$ | $380$ | $571$ | $948$ |\n\nEstimate the probability of germination for this batch of barley seeds. (Round the result to $0.01$)&#34;
+            },
+            {
+                &#34;role&#34;: &#34;assistant&#34;,
+                &#34;content&#34;: &#34;To estimate the probability of germination for the batch of barley seeds, we need to calculate the overall germination rate based on the given data. The germination rate is the ratio of the total number of seeds that germinated to the total number of seeds tested.\n\nFirst, let&#39;s calculate the total number of seeds tested:\n\n\\[\n50 + 100 + 300 + 400 + 600 + 1000 = 2450\n\\]\n\nNext, let&#39;s calculate the total number of seeds that germinated:\n\n\\[\n47 + 96 + 284 + 380 + 571 + 948 = 2326\n\\]\n\nNow, we can calculate the probability of germination by dividing the total number of seeds that germinated by the total number of seeds tested:\n\n\\[\n\\text{Probability of germination} = \\frac{2326}{2450}\n\\]\n\nPerform the division:\n\n\\[\n\\frac{2326}{2450} \\approx 0.9481632653\n\\]\n\nRounding this result to two decimal places gives:\n\n\\[\n0.95\n\\]\n\nTherefore, the estimated probability of germination for this batch of barley seeds is \\( \\boxed{0.95} \\).&#34;
+            }
+        ],
+        &#34;ref_chosen_logps&#34;: -16.809629440307617,
+        &#34;ref_mean_chosen_logps&#34;: -0.06974949687719345,
+        &#34;ref_rejected_logps&#34;: -35.141197204589844,
+        &#34;ref_mean_rejected_logps&#34;: -0.13944919407367706,
+        &#34;fuse_chosen_logps&#34;: [
+            -67.31946563720703,
+            -74.1878662109375,
+            -104.12448120117188
+        ],
+        &#34;fuse_mean_chosen_logps&#34;: [
+            -0.2378779649734497,
+            -0.2621479332447052,
+            -0.3679310381412506
+        ],
+        &#34;fuse_rejected_logps&#34;: [
+            -75.14492797851562,
+            -78.72958374023438,
+            -99.033447265625
+        ],
+        &#34;fuse_mean_rejected_logps&#34;: [
+            -0.25559499859809875,
+            -0.2677876949310303,
+            -0.3368484675884247
+        ]
+</code></pre>
+        </article>
+        
+    </div>
+</div>
+
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        
+        const button = event.target.closest('.research-copy-link');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Copied!';
+        button.style.color = '#10b981';
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.style.color = '';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tocLinks = document.querySelectorAll('.research-toc-nav a[href^="#"]');
+    
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = 80; 
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                const tocLink = document.querySelector(`.research-toc-nav a[href="#${id}"]`);
+                
+                
+                document.querySelectorAll('.research-toc-nav a').forEach(link => {
+                    link.classList.remove('research-active');
+                });
+                
+                
+                if (tocLink) {
+                    tocLink.classList.add('research-active');
+                }
+            }
+        });
+    }, {
+        rootMargin: '-80px 0px -80% 0px'
+    });
+    
+    
+    document.querySelectorAll('.research-article-content h1, .research-article-content h2, .research-article-content h3, .research-article-content h4, .research-article-content h5, .research-article-content h6').forEach(heading => {
+        observer.observe(heading);
+    });
+});
+</script>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; Copyright 2025 InfiX.ai or its affiliates</p>
+        </div>
+    </div>
+</footer>
+    
+    
+    <script src="/js/main.js"></script>
+    <script src="/js/research.js"></script>
+</body>
+</html>

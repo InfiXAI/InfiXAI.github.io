@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Large Language Model on InfiX-AI</title>
+    <link>http://infixai.github.io/tags/large-language-model/</link>
+    <description>Recent content in Large Language Model on InfiX-AI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 09 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://infixai.github.io/tags/large-language-model/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection</title>
+      <link>http://infixai.github.io/research/infiguiagent/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/research/infiguiagent/</guid>
+      <description>InfiGUIAgent is a multimodal generalist GUI agent trained through a two-stage supervised fine-tuning approach, focusing on fundamental GUI understanding skills and advanced reasoning capabilities for native GUI interactions.</description>
+    </item>
+  </channel>
+</rss>

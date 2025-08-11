@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graph-Neural on InfiX-AI</title>
+    <link>http://localhost:1112/tags/graph-neural/</link>
+    <description>Recent content in Graph-Neural on InfiX-AI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1112/tags/graph-neural/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InfiGFusion</title>
+      <link>http://localhost:1112/models/infigfusion/</link>
+      <pubDate>Tue, 16 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1112/models/infigfusion/</guid>
+      <description>Structure-aware extension that builds co-activation graphs from logits and aligns them via efficient Gromov-Wasserstein loss approximation.</description>
+    </item>
+  </channel>
+</rss>

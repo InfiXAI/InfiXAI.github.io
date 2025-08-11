@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Datasets on InfiX-AI</title>
+    <link>http://infixai.github.io/datasets/</link>
+    <description>Recent content in Datasets on InfiX-AI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jul 2025 11:50:11 +0000</lastBuildDate>
+    <atom:link href="http://infixai.github.io/datasets/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>android_control_test</title>
+      <link>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/android_control_test</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/android_control_test</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>android_control_train</title>
+      <link>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/android_control_train</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/android_control_train</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>InfiGUIAgent-Data</title>
+      <link>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/InfiGUIAgent-Data</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/InfiGUIAgent-Data</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>s1K-1.1-850</title>
+      <link>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/s1K-1.1-850</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/s1K-1.1-850</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>s1K-QwQ</title>
+      <link>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/s1K-QwQ</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/s1K-QwQ</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

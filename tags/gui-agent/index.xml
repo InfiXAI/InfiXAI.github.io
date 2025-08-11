@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GUI Agent on InfiX-AI</title>
+    <link>http://infixai.github.io/tags/gui-agent/</link>
+    <description>Recent content in GUI Agent on InfiX-AI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jul 2025 11:50:11 +0000</lastBuildDate>
+    <atom:link href="http://infixai.github.io/tags/gui-agent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners</title>
+      <link>http://infixai.github.io/research/infigui-r1/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/research/infigui-r1/</guid>
+      <description>InfiGUI-R1 is a multimodal large language model-based GUI agent trained using reinforcement learning to enhance planning and error recovery skills for GUI tasks, achieving state-of-the-art performance on multiple benchmarks.</description>
+    </item>
+    <item>
+      <title>InfiGUIAgent-Data</title>
+      <link>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/InfiGUIAgent-Data</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/datasets/InfiX-ai/InfiGUIAgent-Data</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>InfiGUI-R1-3B</title>
+      <link>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-R1-3B</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-R1-3B</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>InfiGUIAgent-2B-Stage1</title>
+      <link>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUIAgent-2B-Stage1</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUIAgent-2B-Stage1</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection</title>
+      <link>http://infixai.github.io/research/infiguiagent/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/research/infiguiagent/</guid>
+      <description>InfiGUIAgent is a multimodal generalist GUI agent trained through a two-stage supervised fine-tuning approach, focusing on fundamental GUI understanding skills and advanced reasoning capabilities for native GUI interactions.</description>
+    </item>
+  </channel>
+</rss>

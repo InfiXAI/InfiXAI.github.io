@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graph-on-Logits on InfiX-AI</title>
+    <link>http://infixai.github.io/tags/graph-on-logits/</link>
+    <description>Recent content in Graph-on-Logits on InfiX-AI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jul 2025 11:37:44 +0000</lastBuildDate>
+    <atom:link href="http://infixai.github.io/tags/graph-on-logits/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InfiGFusion-14B</title>
+      <link>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGFusion-14B</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGFusion-14B</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<title>InfiGUIAgent-Data | InfiX-AI</title>
+<meta name="description" content="Specialized dataset for training InfiGUIAgent models, containing multimodal data (e.g., GUI screenshots, user actions, task descriptions) to enable robust GUI task automation and reasoning.">
+<meta name="keywords" content="">
+<meta name="author" content="InfiX.ai Team">
+
+
+<meta property="og:title" content="InfiGUIAgent-Data">
+<meta property="og:description" content="Specialized dataset for training InfiGUIAgent models, containing multimodal data (e.g., GUI screenshots, user actions, task descriptions) to enable robust GUI task automation and reasoning.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://localhost:1313/huggingface.co/InfiX-ai/InfiGUIAgent-Data">
+<meta property="og:site_name" content="InfiX-AI">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="InfiGUIAgent-Data">
+<meta name="twitter:description" content="Specialized dataset for training InfiGUIAgent models, containing multimodal data (e.g., GUI screenshots, user actions, task descriptions) to enable robust GUI task automation and reasoning.">
+
+
+
+<link rel="canonical" href="http://localhost:1313/huggingface.co/InfiX-ai/InfiGUIAgent-Data">
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+    
+</head>
+<body>
+    <nav class="navbar scrolled">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="http://localhost:1313/" class="brand-link">
+                <picture>
+                    <img src="/images/infix-ai-logo.png" 
+                         alt="InfiX.ai" 
+                         class="brand-logo-img"
+                         onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                </picture>
+                
+                <div class="brand-logo-fallback" style="display: none;">
+                    <span class="logo-text">InfiX.ai</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            
+                
+                    <a href="/" class="nav-link">
+                        Home
+                    </a>
+                
+            
+                
+                    <a href="/research/" class="nav-link">
+                        Research
+                    </a>
+                
+            
+                
+                    <a href="/about/" class="nav-link">
+                        About Us
+                    </a>
+                
+            
+                
+                    <a href="https://github.com/InfiXAI" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-github" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="nav-text">GitHub</span>
+                        
+                    </a>
+                
+            
+                
+                    <a href="https://huggingface.co/InfiX-ai" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-huggingface" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM6.624 17.043c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zm10.729 0c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zM12 14.908c-1.141 0-2.067-.926-2.067-2.067S10.859 10.774 12 10.774s2.067.926 2.067 2.067S13.141 14.908 12 14.908z"/>
+                            </svg>
+                            <span class="nav-text">HuggingFace</span>
+                        
+                    </a>
+                
+            
+        </div>
+    </div>
+</nav>
+    
+    <main class="page-content">
+        
+<div class="hero-gradient hero-small">
+    <div class="container">
+        <h1 class="hero-title">InfiGUIAgent-Data</h1>
+    </div>
+</div>
+
+<div class="article-container">
+    <article class="article">
+        <header class="article-header">
+            
+            
+            <div class="post-tags">
+                
+                <span class="tag">GUI agent</span>
+                
+                <span class="tag">multimodal</span>
+                
+                <span class="tag">task automation</span>
+                
+                <span class="tag">agent training</span>
+                
+            </div>
+            
+            
+            
+            <div class="article-meta">
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                    </svg>
+                    July 31, 2025
+                </span>
+                
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                    </svg>
+                    0 min read
+                </span>
+                
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                    </svg>
+                    InfiX.ai Team
+                </span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            
+        </div>
+        
+        
+        <nav class="article-nav">
+            
+            <a href="http://localhost:1313/huggingface.co/InfiX-ai/s1K-1.1-850" class="nav-link nav-prev">
+                ← s1K-1.1-850
+            </a>
+            
+            
+            
+            <a href="http://localhost:1313/huggingface.co/datasets/InfiX-ai/android_control_train" class="nav-link nav-next">
+                android_control_train →
+            </a>
+            
+        </nav>
+    </article>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; Copyright 2025 InfiX.ai or its affiliates</p>
+        </div>
+    </div>
+</footer>
+    
+    
+    <script src="/js/main.js"></script>
+    <script src="/js/research.js"></script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<title>InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners | InfiX-AI</title>
+<meta name="description" content="We present InfiGUI-R1, a novel GUI agent that combines spatial reasoning with reinforcement learning to achieve superior performance in GUI automation tasks across desktop, mobile, and web platforms.">
+<meta name="keywords" content="关键词1,关键词2">
+<meta name="author" content="作者名">
+
+
+<meta property="og:title" content="InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners">
+<meta property="og:description" content="We present InfiGUI-R1, a novel GUI agent that combines spatial reasoning with reinforcement learning to achieve superior performance in GUI automation tasks across desktop, mobile, and web platforms.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://infixai.github.io/research/infigui-r1/">
+<meta property="og:site_name" content="InfiX-AI">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners">
+<meta name="twitter:description" content="We present InfiGUI-R1, a novel GUI agent that combines spatial reasoning with reinforcement learning to achieve superior performance in GUI automation tasks across desktop, mobile, and web platforms.">
+
+
+
+<link rel="canonical" href="http://infixai.github.io/research/infigui-r1/">
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+    <link rel="stylesheet" href="/css/research.css">
+    <link rel="stylesheet" href="/css/research-single.css">
+    
+    
+</head>
+<body>
+    <nav class="navbar scrolled">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="http://infixai.github.io/" class="brand-link">
+                <picture>
+                    <img src="/images/infix-ai-logo.png" 
+                         alt="InfiX.ai" 
+                         class="brand-logo-img"
+                         onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                </picture>
+                
+                <div class="brand-logo-fallback" style="display: none;">
+                    <span class="logo-text">InfiX.ai</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            
+                
+                    <a href="/" class="nav-link">
+                        Home
+                    </a>
+                
+            
+                
+                    <a href="/research/" class="nav-link">
+                        Research
+                    </a>
+                
+            
+                
+                    <a href="/about/" class="nav-link">
+                        About Us
+                    </a>
+                
+            
+                
+                    <a href="https://github.com/InfiXAI" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-github" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="nav-text">GitHub</span>
+                        
+                    </a>
+                
+            
+                
+                    <a href="https://huggingface.co/InfiX-ai" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-huggingface" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM6.624 17.043c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zm10.729 0c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zM12 14.908c-1.141 0-2.067-.926-2.067-2.067S10.859 10.774 12 10.774s2.067.926 2.067 2.067S13.141 14.908 12 14.908z"/>
+                            </svg>
+                            <span class="nav-text">HuggingFace</span>
+                        
+                    </a>
+                
+            
+        </div>
+    </div>
+</nav>
+    
+    <main class="page-content">
+        
+
+<div class="research-single-container">
+    <div class="research-single-layout">
+       
+        
+        <header class="research-article-header">
+            
+            <div class="research-article-meta">
+                <span class="research-article-category" data-category="">
+                    
+                </span>
+                <time class="research-article-date" datetime="2025-04-19">
+                    April 19, 2025
+                </time>
+            </div>
+            
+            
+            <h1 class="research-article-title">InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners</h1>
+            
+            
+            
+            
+            
+            
+            <div class="research-article-tags">
+                
+                    <span class="research-article-tag">GUI Agent</span>
+                
+                    <span class="research-article-tag">Multimodal LLM</span>
+                
+                    <span class="research-article-tag">Reinforcement Learning</span>
+                
+                    <span class="research-article-tag">Computer Vision</span>
+                
+                    <span class="research-article-tag">AI Research</span>
+                
+            </div>
+            
+            
+            
+            <div class="research-article-links">
+                
+                
+                
+                
+                
+            </div>
+        </header>
+
+        
+        <article class="research-article-content">
+            <!-- 添加 hero 图片或横幅 -->
+<div align="center">
+  <img src="images/infigui-r1_logo.png" alt="InfiGUI-R1 Overview" style="max-width: 80%; margin: 20px 0;">
+</div>
+<!-- 快速链接区域 -->
+<div align="center" style="margin: 20px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+  <a href="https://arxiv.org/abs/2504.14239" style="padding: 8px 15px; background-color: #B22222; color: white; border-radius: 5px; text-decoration: none;">📚 Paper</a>
+  <a href="https://github.com/Reallm-Labs/InfiGUI-R1" style="padding: 8px 15px; background-color: #24292e; color: white; border-radius: 5px; text-decoration: none;">💻 Code</a>
+  <a href="https://huggingface.co/Reallm-Labs/InfiGUI-R1-3B" style="padding: 8px 15px; background-color: #FFD700; color: black; border-radius: 5px; text-decoration: none;">🤗 Model</a>
+</div>
+<p>In this work, we develop <strong>InfiGUI-R1</strong>, a multimodal large language model-based GUI agent primarily trained using <strong>Reinforcement Learning</strong> to enhance planning and error recovery skills for GUI tasks. Specifically, our agent is trained using a two-stage framework: first, we inject spatial reasoning capabilities by distilling reasoning trajectories from teacher models; second, we enhance the agent&rsquo;s planning and error recovery skills using Reinforcement Learning, employing techniques like rewarding accurate sub-goal generation and training on constructed error recovery scenarios.</p>
+<div align="center">
+  <img src="images/method.png" width="70%" alt="Method Overview">
+  <p><i>Our two-stage training framework</i></p>
+</div>
+<div align="center">
+  <img src="images/screenspot-pro.png" width="70%" alt="Results on ScreenSpot Pro">
+  <p><i>Performance results on ScreenSpot Pro benchmark</i></p>
+</div>
+<h2 id="-news">🔥 News</h2>
+<ul>
+<li>🔥 <em><strong><code>2025/05/15</code></strong></em> Our paper &ldquo;<a href="https://os-agent-survey.github.io/">OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use</a>&rdquo; is accepted by <em>ACL 2025</em>.</li>
+<li>🔥 <em><strong><code>2025/4/19</code></strong></em> Our paper &ldquo;<a href="https://arxiv.org/abs/2504.14239">InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners</a>&rdquo; released.</li>
+<li>🔥 <em><strong><code>2025/1/9</code></strong></em> Our paper &ldquo;<a href="https://arxiv.org/abs/2501.04575">InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection</a>&rdquo; released.</li>
+<li>🔥 <em><strong><code>2024/12/12</code></strong></em> Our paper &ldquo;<a href="https://os-agent-survey.github.io/">OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use</a>&rdquo; released.</li>
+<li><em><strong><code>2024/4/2</code></strong></em> Our paper &ldquo;<a href="https://infiagent.github.io/">InfiAgent-DABench: Evaluating Agents on Data Analysis Tasks</a>&rdquo; is accepted by <em>ICML 2024</em>.</li>
+</ul>
+<h2 id="-updates">🚀 Updates</h2>
+<ul>
+<li><em><strong><code>2025/05/21</code></strong></em> Added <a href="#-evaluation">AndroidControl evaluation</a> methods and uploaded the <a href="https://huggingface.co/datasets/Reallm-Labs/android_control_test">corresponding test data</a>.</li>
+<li><em><strong><code>2025/04/20</code></strong></em> <a href="https://huggingface.co/Reallm-Labs/InfiGUI-R1-3B">Model weights</a> have been uploaded to Hugging Face.</li>
+<li><em><strong><code>2025/04/19</code></strong></em> <a href="https://arxiv.org/abs/2504.14239">Our preprint</a> has been published on arXiv.</li>
+</ul>
+<h2 id="-results">📊 Results</h2>
+<h3 id="screenspot-results">ScreenSpot Results</h3>
+<p>On the cross-platform <a href="https://github.com/njucckevin/SeeClick">ScreenSpot</a> benchmark, InfiGUI-R1-3B achieves an average accuracy of <strong>87.5%</strong>. It leads across text and icon localization tasks on Mobile, Desktop, and Web platforms, reaching the state-of-the-art level for models of similar parameter size (as of 2025/04/19):</p>
+<div align="center">
+<table border="1">
+  <thead>
+    <tr><th rowspan="2" align="left">Model</th><th colspan="2" align="center">Mobile</th><th colspan="2" align="center">Desktop</th><th colspan="2" align="center">Web</th><th rowspan="2" align="center">Avg.</th></tr>
+    <tr><th align="center">Text</th><th align="center">Icon</th><th align="center">Text</th><th align="center">Icon</th><th align="center">Text</th><th align="center">Icon</th></tr>
+  </thead>
+  <tbody>
+    <tr><th colspan="8" align="left"><em>Proprietary Models</em></th></tr>
+    <tr><td align="left">GPT-4o</td><td align="center">30.5</td><td align="center">23.2</td><td align="center">20.6</td><td align="center">19.4</td><td align="center">11.1</td><td align="center">7.8</td><td align="center">18.8</td></tr>
+    <tr><td align="left">Claude Computer Use</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">83.0</td></tr>
+    <tr><td align="left">Gemini 2.0 (Project Mariner)</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">84.0</td></tr>
+    <tr><th colspan="8" align="left"><em>General Open-source Models</em></th></tr>
+    <tr><td align="left">Qwen2-VL-7B</td><td align="center">61.3</td><td align="center">39.3</td><td align="center">52.0</td><td align="center">45.0</td><td align="center">33.0</td><td align="center">21.8</td><td align="center">42.9</td></tr>
+    <tr><td align="left">Qwen2.5-VL-3B</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">55.5</td></tr>
+    <tr><td align="left">Qwen2.5-VL-7B</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center"><ins>84.7</ins></td></tr>
+    <tr><th colspan="8" align="left"><em>GUI-specific Models</em></th></tr>
+    <tr><td align="left">CogAgent</td><td align="center">67.0</td><td align="center">24.0</td><td align="center">74.2</td><td align="center">20.0</td><td align="center">70.4</td><td align="center">28.6</td><td align="center">47.4</td></tr>
+    <tr><td align="left">SeeClick</td><td align="center">78.0</td><td align="center">52.0</td><td align="center">72.2</td><td align="center">30.0</td><td align="center">55.7</td><td align="center">32.5</td><td align="center">53.4</td></tr>
+    <tr><td align="left">UGround-7B</td><td align="center">82.8</td><td align="center">60.3</td><td align="center">82.5</td><td align="center">63.6</td><td align="center">80.4</td><td align="center">70.4</td><td align="center">73.3</td></tr>
+    <tr><td align="left">OS-Atlas-7B</td><td align="center">93.0</td><td align="center">72.9</td><td align="center">91.8</td><td align="center">62.9</td><td align="center">90.9</td><td align="center">74.3</td><td align="center">82.5</td></tr>
+    <tr><td align="left">ShowUI-2B</td><td align="center">92.3</td><td align="center">75.5</td><td align="center">76.3</td><td align="center">61.1</td><td align="center">81.7</td><td align="center">63.6</td><td align="center">75.1</td></tr>
+    <tr><td align="left">Aguvis-7B</td><td align="center"><ins>95.6</ins></td><td align="center">77.7</td><td align="center"><ins>93.8</ins></td><td align="center">67.1</td><td align="center">88.3</td><td align="center">75.2</td><td align="center">84.4</td></tr>
+    <tr><td align="left">UI-R1-3B</td><td align="center">-</td><td align="center">-</td><td align="center">90.2</td><td align="center">59.3</td><td align="center">85.2</td><td align="center">73.3</td><td align="center">-</td></tr>
+    <tr><td align="left">GUI-R1-3B</td><td align="center">-</td><td align="center">-</td><td align="center"><ins>93.8</ins></td><td align="center">64.8</td><td align="center">89.6</td><td align="center">72.1</td><td align="center">-</td></tr>
+    <tr><td align="left">GUI-R1-7B</td><td align="center">-</td><td align="center">-</td><td align="center">91.8</td><td align="center"><ins>73.6</ins></td><td align="center"><ins>91.3</ins></td><td align="center"><ins>75.7</ins></td><td align="center">-</td></tr>
+    <tr><td align="left">UI-TARS-2B</td><td align="center">93.0</td><td align="center">75.5</td><td align="center">90.7</td><td align="center">68.6</td><td align="center">84.3</td><td align="center">74.8</td><td align="center">82.3</td></tr>
+    <tr><th colspan="8" align="left"><em>Ours</em></th></tr>
+    <tr><td align="left"><b>InfiGUI-R1-3B</b></td><td align="center"><b>97.1</b></td><td align="center"><b>81.2</b></td><td align="center"><b>94.3</b></td><td align="center"><b>77.1</b></td><td align="center"><b>91.7</b></td><td align="center"><b>77.6</b></td><td align="center"><b>87.5</b></td></tr>
+  </tbody>
+</table>
+</div>
+<h3 id="screenspot-pro-results">ScreenSpot-Pro Results</h3>
+<p>On the more challenging <a href="https://github.com/likaixin2000/ScreenSpot-Pro-GUI-Grounding">ScreenSpot-Pro</a> benchmark, which focuses on complex high-resolution desktop applications, InfiGUI-R1-3B achieves an average accuracy of <strong>35.7%</strong>. This performance rivals that of larger 7B models with excellent performance, reaching the state-of-the-art level for models of similar parameter size (as of 2025/04/19).</p>
+<div align="center">
+<table border="1">
+  <thead>
+    <tr><th rowspan="3" align="left">Model&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th colspan="3" align="center">Avg.</th><th colspan="3" align="center">CAD</th><th colspan="3" align="center">Development</th><th colspan="3" align="center">Creative</th><th colspan="3" align="center">Scientific</th><th colspan="3" align="center">Office</th><th colspan="3" align="center">OS</th></tr>
+    <tr><th colspan="2" align="center">Acc</th><th rowspan="2" align="center">Avg.</th><th colspan="2" align="center">Acc</th><th rowspan="2" align="center">Avg.</th><th colspan="2" align="center">Acc</th><th rowspan="2" align="center">Avg.</th><th colspan="2" align="center">Acc</th><th rowspan="2" align="center">Avg.</th><th colspan="2" align="center">Acc</th><th rowspan="2" align="center">Avg.</th><th colspan="2" align="center">Acc</th><th rowspan="2" align="center">Avg.</th><th colspan="2" align="center">Acc</th><th rowspan="2" align="center">Avg.</th></tr>
+    <tr><th align="center">Text</th><th align="center">Icon</th><th align="center">Text</th><th align="center">Icon</th><th align="center">Text</th><th align="center">Icon</th><th align="center">Text</th><th align="center">Icon</th><th align="center">Text</th><th align="center">Icon</th><th align="center">Text</th><th align="center">Icon</th><th align="center">Text</th><th align="center">Icon</th></tr>
+  </thead>
+  <tbody>
+    <tr><th colspan="22" align="left"><em>Proprietary Models</em></th></tr>
+    <tr><td align="left">GPT-4o</td><td align="center">1.3</td><td align="center">0.0</td><td align="center">0.8</td><td align="center">2.0</td><td align="center">0.0</td><td align="center">1.5</td><td align="center">1.3</td><td align="center">0.0</td><td align="center">0.7</td><td align="center">1.0</td><td align="center">0.0</td><td align="center">0.6</td><td align="center">2.1</td><td align="center">0.0</td><td align="center">1.2</td><td align="center">1.1</td><td align="center">0.0</td><td align="center">0.9</td><td align="center">0.0</td><td align="center">0.0</td><td align="center">0.0</td></tr>
+    <tr><td align="left">Claude Computer Use</td><td align="center">23.4</td><td align="center">7.1</td><td align="center">17.1</td><td align="center">14.5</td><td align="center">3.7</td><td align="center">11.9</td><td align="center">22.0</td><td align="center">3.9</td><td align="center">12.6</td><td align="center">25.9</td><td align="center">3.4</td><td align="center">16.8</td><td align="center">33.9</td><td align="center">15.8</td><td align="center">25.8</td><td align="center">30.1</td><td align="center">16.3</td><td align="center">26.9</td><td align="center">11.0</td><td align="center">4.5</td><td align="center">8.1</td></tr>
+    <tr><th colspan="22" align="left"><em>General Open-source Models</em></th></tr>
+    <tr><td align="left">Qwen2-VL-7B</td><td align="center">2.5</td><td align="center">0.2</td><td align="center">1.6</td><td align="center">0.5</td><td align="center">0.0</td><td align="center">0.4</td><td align="center">2.6</td><td align="center">0.0</td><td align="center">1.3</td><td align="center">1.5</td><td align="center">0.0</td><td align="center">0.9</td><td align="center">6.3</td><td align="center">0.0</td><td align="center">3.5</td><td align="center">3.4</td><td align="center">1.9</td><td align="center">3.0</td><td align="center">0.9</td><td align="center">0.0</td><td align="center">0.5</td></tr>
+    <tr><td align="left">Qwen2.5-VL-3B</td><td align="center">-</td><td align="center">-</td><td align="center">23.9</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td></tr>
+    <tr><td align="left">Qwen2.5-VL-7B</td><td align="center">-</td><td align="center">-</td><td align="center">29.0</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td></tr>
+    <tr><td align="left">Kimi-VL</td><td align="center">-</td><td align="center">-</td><td align="center"><ins>34.5</ins></td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">-</td></tr>
+    <tr><th colspan="22" align="left"><em>GUI-specific Models</em></th></tr>
+    <tr><td align="left">SeeClick</td><td align="center">1.8</td><td align="center">0.0</td><td align="center">1.1</td><td align="center">2.5</td><td align="center">0.0</td><td align="center">1.9</td><td align="center">0.6</td><td align="center">0.0</td><td align="center">0.3</td><td align="center">1.0</td><td align="center">0.0</td><td align="center">0.6</td><td align="center">3.5</td><td align="center">0.0</td><td align="center">2.0</td><td align="center">1.1</td><td align="center">0.0</td><td align="center">0.9</td><td align="center">2.8</td><td align="center">0.0</td><td align="center">1.5</td></tr>
+    <tr><td align="left">CogAgent-18B</td><td align="center">12.0</td><td align="center">0.8</td><td align="center">7.7</td><td align="center">7.1</td><td align="center">3.1</td><td align="center">6.1</td><td align="center">14.9</td><td align="center">0.7</td><td align="center">8.0</td><td align="center">9.6</td><td align="center">0.0</td><td align="center">5.6</td><td align="center">22.2</td><td align="center">1.8</td><td align="center">13.4</td><td align="center">13.0</td><td align="center">0.0</td><td align="center">10.0</td><td align="center">5.6</td><td align="center">0.0</td><td align="center">3.1</td></tr>
+    <tr><td align="left">Aria-UI</td><td align="center">17.1</td><td align="center">2.0</td><td align="center">11.3</td><td align="center">7.6</td><td align="center">1.6</td><td align="center">6.1</td><td align="center">16.2</td><td align="center">0.0</td><td align="center">8.4</td><td align="center">23.7</td><td align="center">2.1</td><td align="center">14.7</td><td align="center">27.1</td><td align="center">6.4</td><td align="center">18.1</td><td align="center">20.3</td><td align="center">1.9</td><td align="center">16.1</td><td align="center">4.7</td><td align="center">0.0</td><td align="center">2.6</td></tr>
+    <tr><td align="left">OS-Atlas-4B</td><td align="center">5.0</td><td align="center">1.7</td><td align="center">3.7</td><td align="center">2.0</td><td align="center">0.0</td><td align="center">1.5</td><td align="center">7.1</td><td align="center">0.0</td><td align="center">3.7</td><td align="center">3.0</td><td align="center">1.4</td><td align="center">2.3</td><td align="center">9.0</td><td align="center">5.5</td><td align="center">7.5</td><td align="center">5.1</td><td align="center">3.8</td><td align="center">4.8</td><td align="center">5.6</td><td align="center">0.0</td><td align="center">3.1</td></tr>
+    <tr><td align="left">OS-Atlas-7B</td><td align="center">28.1</td><td align="center">4.0</td><td align="center">18.9</td><td align="center">12.2</td><td align="center">4.7</td><td align="center">10.3</td><td align="center">33.1</td><td align="center">1.4</td><td align="center">17.7</td><td align="center">28.8</td><td align="center">2.8</td><td align="center">17.9</td><td align="center">37.5</td><td align="center">7.3</td><td align="center">24.4</td><td align="center">33.9</td><td align="center">5.7</td><td align="center">27.4</td><td align="center">27.1</td><td align="center">4.5</td><td align="center">16.8</td></tr>
+    <tr><td align="left">ShowUI-2B</td><td align="center">10.8</td><td align="center">2.6</td><td align="center">7.7</td><td align="center">2.5</td><td align="center">0.0</td><td align="center">1.9</td><td align="center">16.9</td><td align="center">1.4</td><td align="center">9.4</td><td align="center">9.1</td><td align="center">0.0</td><td align="center">5.3</td><td align="center">13.2</td><td align="center">7.3</td><td align="center">10.6</td><td align="center">15.3</td><td align="center">7.5</td><td align="center">13.5</td><td align="center">10.3</td><td align="center">2.2</td><td align="center">6.6</td></tr>
+    <tr><td align="left">UGround-7B</td><td align="center">25.0</td><td align="center">2.8</td><td align="center">16.5</td><td align="center">14.2</td><td align="center">1.6</td><td align="center">11.1</td><td align="center">26.6</td><td align="center">2.1</td><td align="center">14.7</td><td align="center">27.3</td><td align="center">2.8</td><td align="center">17.0</td><td align="center">31.9</td><td align="center">2.7</td><td align="center">19.3</td><td align="center">31.6</td><td align="center">11.3</td><td align="center">27.0</td><td align="center">17.8</td><td align="center">0.0</td><td align="center">9.7</td></tr>
+    <tr><td align="left">UGround-V1-7B</td><td align="center">-</td><td align="center">-</td><td align="center">31.1</td><td align="center">-</td><td align="center">-</td><td align="center">13.5</td><td align="center">-</td><td align="center">-</td><td align="center"><ins>35.5</ins></td><td align="center">-</td><td align="center">-</td><td align="center">27.8</td><td align="center">-</td><td align="center">-</td><td align="center">38.8</td><td align="center">-</td><td align="center">-</td><td align="center">48.8</td><td align="center">-</td><td align="center">-</td><td align="center"><ins>26.1</ins></td></tr>
+    <tr><td align="left">UI-R1-3B</td><td align="center">-</td><td align="center">-</td><td align="center">17.8</td><td align="center">11.2</td><td align="center">6.3</td><td align="center">-</td><td align="center">22.7</td><td align="center">4.1</td><td align="center">-</td><td align="center">27.3</td><td align="center">3.5</td><td align="center">-</td><td align="center">42.4</td><td align="center">11.8</td><td align="center">-</td><td align="center">32.2</td><td align="center">11.3</td><td align="center">-</td><td align="center">13.1</td><td align="center">4.5</td><td align="center">-</td></tr>
+    <tr><td align="left">GUI-R1-3B</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center"><ins>26.4</ins></td><td align="center">7.8</td><td align="center">-</td><td align="center">33.8</td><td align="center"><ins>4.8</ins></td><td align="center">-</td><td align="center">40.9</td><td align="center">5.6</td><td align="center">-</td><td align="center"><ins>61.8</ins></td><td align="center">17.3</td><td align="center">-</td><td align="center">53.6</td><td align="center">17.0</td><td align="center">-</td><td align="center">28.1</td><td align="center">5.6</td><td align="center">-</td></tr>
+    <tr><td align="left">GUI-R1-7B</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">23.9</td><td align="center">6.3</td><td align="center">-</td><td align="center">49.4</td><td align="center"><ins>4.8</ins></td><td align="center">-</td><td align="center">38.9</td><td align="center"><ins>8.4</ins></td><td align="center">-</td><td align="center">55.6</td><td align="center">11.8</td><td align="center">-</td><td align="center">58.7</td><td align="center"><ins>26.4</ins></td><td align="center">-</td><td align="center"><ins>42.1</ins></td><td align="center"><b>16.9</b></td><td align="center">-</td></tr>
+    <tr><td align="left">UI-TARS-2B</td><td align="center">39.6</td><td align="center">8.4</td><td align="center">27.7</td><td align="center">17.8</td><td align="center">4.7</td><td align="center">14.6</td><td align="center">47.4</td><td align="center">4.1</td><td align="center">26.4</td><td align="center">42.9</td><td align="center">6.3</td><td align="center">27.6</td><td align="center">56.9</td><td align="center">17.3</td><td align="center">39.8</td><td align="center">50.3</td><td align="center">17.0</td><td align="center">42.6</td><td align="center">21.5</td><td align="center">5.6</td><td align="center">14.3</td></tr>
+    <tr><td align="left">UI-TARS-7B</td><td align="center"><ins>47.8</ins></td><td align="center"><b>16.2</b></td><td align="center"><b>35.7</b></td><td align="center">20.8</td><td align="center"><ins>9.4</ins></td><td align="center"><ins>18.0</ins></td><td align="center"><b>58.4</b></td><td align="center"><b>12.4</b></td><td align="center"><b>36.1</b></td><td align="center"><b>50.0</b></td><td align="center"><b>9.1</b></td><td align="center"><b>32.8</b></td><td align="center"><b>63.9</b></td><td align="center"><b>31.8</b></td><td align="center"><b>50.0</b></td><td align="center"><ins>63.3</ins></td><td align="center">20.8</td><td align="center"><ins>53.5</ins></td><td align="center">30.8</td><td align="center"><b>16.9</b></td><td align="center">24.5</td></tr>
+    <tr><th colspan="22" align="left"><em>Ours</em></th></tr>
+    <tr><td align="left"><b>InfiGUI-R1-3B</b></td><td align="center"><b>49.1</b></td><td align="center"><ins>14.1</ins></td><td align="center"><b>35.7</b></td><td align="center"><b>33.0</b></td><td align="center"><b>14.1</b></td><td align="center"><b>28.4</b></td><td align="center"><ins>51.3</ins></td><td align="center"><b>12.4</b></td><td align="center">32.4</td><td align="center"><ins>44.9</ins></td><td align="center">7.0</td><td align="center"><ins>29.0</ins></td><td align="center">58.3</td><td align="center"><ins>20.0</ins></td><td align="center"><ins>41.7</ins></td><td align="center"><b>65.5</b></td><td align="center"><b>28.3</b></td><td align="center"><b>57.0</b></td><td align="center"><b>43.9</b></td><td align="center"><ins>12.4</ins></td><td align="center"><b>29.6</b></td></tr>
+  </tbody>
+</table>
+</div>
+<h3 id="androidcontrol-results">AndroidControl Results</h3>
+<p>On the <a href="https://github.com/google-research/google-research/tree/master/android_control">AndroidControl</a>, which involves diverse Android trajectory tasks (with Low and High difficulty levels), InfiGUI-R1-3B achieves success rates on its test split of <strong>92.1%</strong> and <strong>71.1%</strong>, respectively. This reaches the state-of-the-art level for models of similar parameter size (as of 2025/04/19).</p>
+<div align="center">
+<table border="1">
+  <thead>
+    <tr><th rowspan="2" align="left">Model</th><th colspan="3" align="center">AndroidControl-Low</th><th colspan="3" align="center">AndroidControl-High</th></tr>
+    <tr><th align="center">Type</th><th align="center">Grounding</th><th align="center">SR</th><th align="center">Type</th><th align="center">Grounding</th><th align="center">SR</th></tr>
+  </thead>
+  <tbody>
+    <tr><td align="left">GPT-4o</td><td align="center">74.3</td><td align="center">0.0</td><td align="center">19.4</td><td align="center">66.3</td><td align="center">0.0</td><td align="center">20.8</td></tr>
+    <tr><td align="left">Aria-UI</td><td align="center">–</td><td align="center"><ins>87.7</ins></td><td align="center">67.3</td><td align="center">–</td><td align="center">43.2</td><td align="center">10.2</td></tr>
+    <tr><td align="left">OS-Atlas-4B</td><td align="center">91.9</td><td align="center">83.8</td><td align="center">80.6</td><td align="center"><b>84.7</b></td><td align="center">73.8</td><td align="center">67.5</td></tr>
+    <tr><td align="left">Aguvis-7B</td><td align="center">–</td><td align="center">–</td><td align="center">80.5</td><td align="center">–</td><td align="center">–</td><td align="center">61.5</td></tr>
+    <tr><td align="left">Aguvis-72B</td><td align="center">–</td><td align="center">–</td><td align="center">84.4</td><td align="center">–</td><td align="center">–</td><td align="center">66.4</td></tr>
+    <tr><td align="left">UI-R1</td><td align="center">94.3</td><td align="center">82.6</td><td align="center">88.5</td><td align="center">-</td><td align="center">-</td><td align="center">-</td></tr>
+    <tr><td align="left">GUI-R1-3B</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">58.0</td><td align="center">56.2</td><td align="center">46.6</td></tr>
+    <tr><td align="left">GUI-R1-7B</td><td align="center">-</td><td align="center">-</td><td align="center">-</td><td align="center">71.6</td><td align="center">65.6</td><td align="center">51.7</td></tr>
+    <tr><td align="left">UI-TARS-2B</td><td align="center"><b>98.1</b></td><td align="center">87.3</td><td align="center"><ins>89.3</ins></td><td align="center">81.2</td><td align="center"><b>78.4</b></td><td align="center"><ins>68.9</ins></td></tr>
+    <tr><th colspan="7" align="left"><em>Ours</em></th></tr>
+    <tr><td align="left"><b>InfiGUI-R1-3B</b></td><td align="center"><ins>96.0</ins></td><td align="center"><b>93.2</b></td><td align="center"><b>92.1</b></td><td align="center"><ins>82.7</ins></td><td align="center"><ins>74.4</ins></td><td align="center"><b>71.1</b></td></tr>
+  </tbody>
+</table>
+</div>
+<h2 id="-evaluation">🧪 Evaluation</h2>
+<h3 id="androidcontrol">AndroidControl</h3>
+<p>To reproduce the results on AndroidControl:</p>
+<ol>
+<li>Install the <code>vllm</code> library:
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install vllm
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Navigate to the evaluation directory (<a href="https://github.com/Reallm-Labs/InfiGUI-R1/tree/main/eval/android_control"><code>eval/android_control</code></a>):
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6639ba">cd</span> eval/android_control
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Download the processed test set from Hugging Face (<a href="https://huggingface.co/datasets/Reallm-Labs/android_control_test"><code>Reallm-Labs/android_control_test</code></a>):
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>huggingface-cli download --repo-type dataset --resume-download Reallm-Labs/android_control_test --local-dir ./
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Extract the downloaded data:
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -xzf android_control_test.tar.gz
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>Run the evaluation scripts for high and low difficulty tasks:
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python android_control.py --model_path Reallm-Labs/InfiGUI-R1-3B --eval_type high --thinking
+</span></span><span style="display:flex;"><span>python android_control.py --model_path Reallm-Labs/InfiGUI-R1-3B --eval_type low --thinking
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h2 id="-citation-information">📚 Citation Information</h2>
+<p>If you find this work useful, citations to the following papers are welcome:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bibtex" data-lang="bibtex"><span style="display:flex;"><span><span style="color:#1f2328">@article</span><span style="color:#1f2328">{</span><span style="color:#900;font-weight:bold">liu2025infigui</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">title</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">author</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{Liu, Yuhang and Li, Pengxiang and Xie, Congkai and Hu, Xavier and Han, Xiaotian and Zhang, Shengyu and Yang, Hongxia and Wu, Fei}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">journal</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{arXiv preprint arXiv:2504.14239}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">year</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{2025}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bibtex" data-lang="bibtex"><span style="display:flex;"><span><span style="color:#1f2328">@article</span><span style="color:#1f2328">{</span><span style="color:#900;font-weight:bold">liu2025infiguiagent</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">title</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">author</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{Liu, Yuhang and Li, Pengxiang and Wei, Zishu and Xie, Congkai and Hu, Xueyu and Xu, Xinchen and Zhang, Shengyu and Han, Xiaotian and Yang, Hongxia and Wu, Fei}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">journal</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{arXiv preprint arXiv:2501.04575}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">year</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{2025}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="-acknowledgements">🙏 Acknowledgements</h2>
+<p>We would like to express our gratitude for the following open-source projects: <a href="https://github.com/hiyouga/EasyR1">EasyR1</a>, <a href="https://github.com/volcengine/verl">VERL</a>, <a href="https://github.com/hiyouga/LLaMA-Factory">LLaMA-Factory</a>, and <a href="https://github.com/QwenLM/Qwen2.5-VL">Qwen2.5-VL</a>.</p>
+
+        </article>
+        
+    </div>
+</div>
+
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        
+        const button = event.target.closest('.research-copy-link');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Copied!';
+        button.style.color = '#10b981';
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.style.color = '';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tocLinks = document.querySelectorAll('.research-toc-nav a[href^="#"]');
+    
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = 80; 
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                const tocLink = document.querySelector(`.research-toc-nav a[href="#${id}"]`);
+                
+                
+                document.querySelectorAll('.research-toc-nav a').forEach(link => {
+                    link.classList.remove('research-active');
+                });
+                
+                
+                if (tocLink) {
+                    tocLink.classList.add('research-active');
+                }
+            }
+        });
+    }, {
+        rootMargin: '-80px 0px -80% 0px'
+    });
+    
+    
+    document.querySelectorAll('.research-article-content h1, .research-article-content h2, .research-article-content h3, .research-article-content h4, .research-article-content h5, .research-article-content h6').forEach(heading => {
+        observer.observe(heading);
+    });
+});
+</script>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; Copyright 2025 InfiX.ai or its affiliates</p>
+        </div>
+    </div>
+</footer>
+    
+    
+    <script src="/js/main.js"></script>
+    <script src="/js/research.js"></script>
+</body>
+</html>

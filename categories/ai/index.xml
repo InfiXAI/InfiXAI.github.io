@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AI on InfiX-AI</title>
+    <link>http://infixai.github.io/categories/ai/</link>
+    <description>Recent content in AI on InfiX-AI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://infixai.github.io/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners</title>
+      <link>http://infixai.github.io/research/infigui-r1/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/research/infigui-r1/</guid>
+      <description>InfiGUI-R1 is a multimodal large language model-based GUI agent trained using reinforcement learning to enhance planning and error recovery skills for GUI tasks, achieving state-of-the-art performance on multiple benchmarks.</description>
+    </item>
+    <item>
+      <title>InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion</title>
+      <link>http://infixai.github.io/research/infigfusion/</link>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/research/infigfusion/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;InfiGFusion&lt;/strong&gt; is the first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs. We introduce a novel Graph-on-Logits Distillation (GLD) loss that captures cross-dimension interactions via co-activation graphs and aligns them using an efficient, provable approximation of Gromov-Wasserstein distance (reducing complexity from O(n^4) to O(nlogn)). Our released &lt;strong&gt;InfiGFusion-14B&lt;/strong&gt; model consistently shows better performance, achieving +35.6 on Multistep Arithmetic and +37.06 on Causal Judgement over SFT, demonstrating superior multi-step and complex logic inference.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

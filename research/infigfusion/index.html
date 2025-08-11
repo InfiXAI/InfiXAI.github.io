@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<title>InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion | InfiX-AI</title>
+<meta name="description" content="The first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs with novel Graph-on-Logits Distillation (GLD) loss.">
+<meta name="keywords" content="Graph Neural Networks,Knowledge Distillation,Gromov-Wasserstein,Model Fusion,Large Language Models,LLM,AI,Machine Learning">
+<meta name="author" content="作者名">
+
+
+<meta property="og:title" content="InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion">
+<meta property="og:description" content="The first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs with novel Graph-on-Logits Distillation (GLD) loss.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://infixai.github.io/research/infigfusion/">
+<meta property="og:site_name" content="InfiX-AI">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion">
+<meta name="twitter:description" content="The first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs with novel Graph-on-Logits Distillation (GLD) loss.">
+
+
+
+<link rel="canonical" href="http://infixai.github.io/research/infigfusion/">
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+    <link rel="stylesheet" href="/css/research.css">
+    <link rel="stylesheet" href="/css/research-single.css">
+    
+    
+</head>
+<body>
+    <nav class="navbar scrolled">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="http://infixai.github.io/" class="brand-link">
+                <picture>
+                    <img src="/images/infix-ai-logo.png" 
+                         alt="InfiX.ai" 
+                         class="brand-logo-img"
+                         onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                </picture>
+                
+                <div class="brand-logo-fallback" style="display: none;">
+                    <span class="logo-text">InfiX.ai</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            
+                
+                    <a href="/" class="nav-link">
+                        Home
+                    </a>
+                
+            
+                
+                    <a href="/research/" class="nav-link">
+                        Research
+                    </a>
+                
+            
+                
+                    <a href="/about/" class="nav-link">
+                        About Us
+                    </a>
+                
+            
+                
+                    <a href="https://github.com/InfiXAI" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-github" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="nav-text">GitHub</span>
+                        
+                    </a>
+                
+            
+                
+                    <a href="https://huggingface.co/InfiX-ai" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-huggingface" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM6.624 17.043c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zm10.729 0c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zM12 14.908c-1.141 0-2.067-.926-2.067-2.067S10.859 10.774 12 10.774s2.067.926 2.067 2.067S13.141 14.908 12 14.908z"/>
+                            </svg>
+                            <span class="nav-text">HuggingFace</span>
+                        
+                    </a>
+                
+            
+        </div>
+    </div>
+</nav>
+    
+    <main class="page-content">
+        
+<div class="hero-gradient hero-small">
+    <div class="container">
+        <h1 class="hero-title">InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion</h1>
+    </div>
+</div>
+
+<div class="article-container">
+    <article class="article">
+        <header class="article-header">
+            
+            
+            <div class="post-tags">
+                
+                <span class="tag">Graph Neural Networks</span>
+                
+                <span class="tag">Knowledge Distillation</span>
+                
+                <span class="tag">Gromov-Wasserstein</span>
+                
+                <span class="tag">Model Fusion</span>
+                
+                <span class="tag">Large Language Models</span>
+                
+            </div>
+            
+            
+            
+            <div class="article-meta">
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                    </svg>
+                    December 20, 2024
+                </span>
+                
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                    </svg>
+                    7 min read
+                </span>
+                
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                    </svg>
+                    作者名
+                </span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            <p><strong>InfiGFusion</strong> is the first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs. We introduce a novel Graph-on-Logits Distillation (GLD) loss that captures cross-dimension interactions via co-activation graphs and aligns them using an efficient, provable approximation of Gromov-Wasserstein distance (reducing complexity from O(n^4) to O(nlogn)). Our released <strong>InfiGFusion-14B</strong> model consistently shows better performance, achieving +35.6 on Multistep Arithmetic and +37.06 on Causal Judgement over SFT, demonstrating superior multi-step and complex logic inference.</p>
+<h2 id="-news">🎉 News</h2>
+<p>🎉 The ckpt model, InfiGFusion-14B, has been released on Huggingface! ! !</p>
+<h2 id="-fusion-framework">🎨 Fusion Framework</h2>
+<p><img src="assets/framework.png" alt="InfiGFusion_framework"></p>
+<h2 id="-model-summary">📕 Model Summary</h2>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Developers</strong></td>
+          <td>Reallm-Labs</td>
+      </tr>
+      <tr>
+          <td><strong>Description</strong></td>
+          <td>InfiGFusion is an open fusion model series designed to fuse multiple domain LLMs into a single LLM. It excels in multi-step and relational inference, enabling robust performance across complex reasoning tasks.</td>
+      </tr>
+      <tr>
+          <td><strong>Architecture</strong></td>
+          <td>14B parameters, dense decoder-only Transformer model</td>
+      </tr>
+      <tr>
+          <td><strong>Inputs</strong></td>
+          <td>Text, best suited for prompts in the chat format</td>
+      </tr>
+      <tr>
+          <td><strong>Max Context length</strong></td>
+          <td>16K tokens</td>
+      </tr>
+      <tr>
+          <td><strong>Fusing input length</strong></td>
+          <td>4K tokens</td>
+      </tr>
+      <tr>
+          <td><strong>Fusing time</strong></td>
+          <td>195 hours</td>
+      </tr>
+      <tr>
+          <td><strong>Fusing data</strong></td>
+          <td>520M tokens</td>
+      </tr>
+      <tr>
+          <td><strong>Outputs</strong></td>
+          <td>Generated text in response to input</td>
+      </tr>
+      <tr>
+          <td><strong>Status</strong></td>
+          <td>Pivot model trained on an offline dataset</td>
+      </tr>
+      <tr>
+          <td><strong>License</strong></td>
+          <td>MIT</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-intended-use">🩺 Intended Use</h2>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Primary Use Cases</strong></td>
+          <td><code>InfiGFusion</code> is designed to accelerate research on language model fusion and serve as a foundation for generative AI-powered features. It is suitable for building general-purpose AI systems and applications (primarily in English), especially in scenarios that require:<br><br>1. Operation in memory- or compute-constrained environments.<br>2. Low-latency inference.<br>3. Advanced reasoning and logical inference.</td>
+      </tr>
+      <tr>
+          <td><strong>Out-of-Scope Use Cases</strong></td>
+          <td><code>InfiGFusion</code> is not specifically optimized or evaluated for all downstream tasks. As such:<br><br>1. Developers should consider the general limitations of language models and carefully evaluate performance, safety, and fairness before deploying in sensitive or high-stakes applications.<br>2. Use of the model must comply with all applicable laws and regulations (e.g., data privacy, export controls), particularly given its English-language focus.<br>3. This Model Card does not alter or restrict the terms of the model’s open-source license.</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-data-overview">💼 Data Overview</h2>
+<h3 id="-training-data">📚 Training Data</h3>
+<p>We construct a novel multi-task training dataset comprising <strong>130k curated examples</strong> across three major domains: <strong>general reasoning</strong>, <strong>mathematics</strong>, and <strong>code generation</strong>.</p>
+<ol>
+<li>
+<p><strong>General Reasoning (52K samples)</strong>
+Samples are sourced from the <a href="https://huggingface.co/datasets/BAAI/Infinity-Instruct">Infinity-Instruct</a> dataset, a high-quality instruction-following corpus created through expert filtering.</p>
+</li>
+<li>
+<p><strong>Mathematics (39K samples)</strong>
+Questions are drawn from the <a href="https://huggingface.co/datasets/AI-MO/NuminaMath-1.5">NuminaMath-1.5</a> dataset—an advanced benchmark for competition-level math spanning Algebra, Geometry, Combinatorics, Calculus, Inequalities, Logic &amp; Puzzles, and Number Theory.
+Answers are distilled from the <a href="https://huggingface.co/datasets/a-m-team/AM-DeepSeek-R1-Distilled-1.4M">DeepSeek-R1-671B</a> model by the AM team.</p>
+</li>
+<li>
+<p><strong>Code Generation (39K samples)</strong>
+We used <a href="https://huggingface.co/mlfoundations-dev/KodCode-V1-SFT-R1_300k_batch_size_512">KodCode-V1-SFT-R1</a>, a dataset with 268K code samples. Each example was processed by our pivot model to generate five completions. These were sandbox-evaluated, and samples where at least one generation failed were flagged. From these, we filtered and distilled 39K high-quality examples.</p>
+</li>
+</ol>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Type</strong></th>
+          <th><strong>General</strong></th>
+          <th><strong>Math</strong></th>
+          <th><strong>Code</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Dataset</strong></td>
+          <td>Infinity-Instruct</td>
+          <td>NuminaMath-1.5</td>
+          <td>KodCode-V1-SFT-R1</td>
+      </tr>
+      <tr>
+          <td><strong>Original Size</strong></td>
+          <td>1.4M</td>
+          <td>1.4M</td>
+          <td>268K</td>
+      </tr>
+      <tr>
+          <td><strong>Filtered Size</strong></td>
+          <td>52K</td>
+          <td>39K</td>
+          <td>39K</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="benchmark-evaluation">Benchmark evaluation</h4>
+<p>To enhance the robustness of answer extraction under the regex-based evaluation framework of<a href="https://github.com/open-compass/opencompass">OpenCompass</a> and <a href="https://github.com/evalplus/evalplus">EvalPlus</a>, we systematically refine the prompts used in several benchmark datasets. These tailored prompt formats are designed to facilitate precise output matching, mitigating ambiguities that often arise from model generations. The revised prompt templates corresponding to each dataset are presented in the following Table, which details how task instructions and answer formats are standardized to align with OpenCompass&rsquo;s automatic evaluation pipeline.</p>
+<p>For datasets such as TheoremQA and HumanEval, we retain the original prompt configurations, adhering to their respective community-adopted evaluation protocols. This ensures consistency with prior works and preserves the validity of established benchmarks.
+For MBPP, we utilize EvalPlus for a more rigorous assessment of LLM-generated code, providing enhanced reliability in functional correctness evaluation, more specifically:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Benchmark</strong></th>
+          <th><strong>Prompt Format</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>IFEval</strong></td>
+          <td><code>{prompt}\nPlease directly give the correct answer:</code></td>
+      </tr>
+      <tr>
+          <td><strong>ARC-C</strong></td>
+          <td><code>Question: {question}\nA. {textA}\nB. {textB}\nC. {textC}\nD. {textD}\nDirectly give me the correct answer option, and then explain:</code></td>
+      </tr>
+      <tr>
+          <td><strong>Hellaswag</strong></td>
+          <td><code>{ctx}\nQuestion: Which ending makes the most sense?\nDirectly give me the correct choice, you can further explain it or not.\nA. {A}\nB. {B}\nC. {C}\nD. {D}\nYou may choose from 'A', 'B', 'C', 'D'.\nAnswer:</code></td>
+      </tr>
+      <tr>
+          <td><strong>BBH</strong></td>
+          <td><code>Follow the given examples and answer the question.\n{_hint}\nQ: {input}\nA: Let's think step by step.</code></td>
+      </tr>
+      <tr>
+          <td><strong>DROP</strong></td>
+          <td><code>You will be asked to read a passage and answer a question. Some examples of passages and Q&amp;A are provided below.\n{drop_examples}\n\n# Your Task\n---\n{prompt}\nThink step by step, then write a line of the form &quot;Answer: $ANSWER&quot; at the end of your response.</code></td>
+      </tr>
+      <tr>
+          <td><strong>MMLU</strong></td>
+          <td><code>{_hint}\nQuestion: {input}\nA. {A}\nB. {B}\nC. {C}\nD. {D}\n\nFor simple problems:\nDirectly provide the answer with minimal explanation.\n\nFor complex problems:\nUse this step-by-step format:\n## Step 1: [Concise description]\n[Brief explanation]\n## Step 2: [Concise description]\n[Brief explanation]\n\nRegardless of the approach, always conclude with:\nThe answer is [the_answer_letter].\nwhere the [the_answer_letter] is one of A, B, C or D.\n\nLet's think step by step.</code></td>
+      </tr>
+      <tr>
+          <td><strong>GSM8K</strong></td>
+          <td><code>{question}\nPlease reason step by step, and put your final answer within \boxed{}.</code></td>
+      </tr>
+      <tr>
+          <td><strong>MATH</strong></td>
+          <td><code>{problem}\nPlease reason step by step, and put your final answer within \boxed{}.</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="-usage">🚀 Usage</h2>
+<h3 id="input-formats">Input Formats</h3>
+<p>Our fusion process uses <a href="https://huggingface.co/microsoft/phi-4">phi-4</a> as the <strong>pivot model</strong>, and thus <strong>InfiGFusion shares the same prompt format and usage style</strong> as <code>phi-4</code>.</p>
+<p>Given the nature of the training data, <code>InfiGFusion</code> performs best when used with prompts in the following chat-style format:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;<span style="color:#1f2328">|</span>im_start<span style="color:#1f2328">|</span>&gt;system&lt;<span style="color:#1f2328">|</span>im_sep<span style="color:#1f2328">|</span>&gt;
+</span></span><span style="display:flex;"><span>You are a medieval knight and must provide explanations to modern people.&lt;<span style="color:#1f2328">|</span>im_end<span style="color:#1f2328">|</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#1f2328">|</span>im_start<span style="color:#1f2328">|</span>&gt;user&lt;<span style="color:#1f2328">|</span>im_sep<span style="color:#1f2328">|</span>&gt;
+</span></span><span style="display:flex;"><span>How should I explain the Internet?&lt;<span style="color:#1f2328">|</span>im_end<span style="color:#1f2328">|</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#1f2328">|</span>im_start<span style="color:#1f2328">|</span>&gt;assistant&lt;<span style="color:#1f2328">|</span>im_sep<span style="color:#1f2328">|</span>&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="with-transformers">With <code>transformers</code></h3>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#cf222e">import</span> <span style="color:#24292e">transformers</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pipeline <span style="color:#0550ae">=</span> transformers<span style="color:#0550ae">.</span>pipeline<span style="color:#1f2328">(</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;text-generation&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    model<span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;InfiGFusion&#34;</span><span style="color:#1f2328">,</span>  <span style="color:#57606a"># replace with actual model path</span>
+</span></span><span style="display:flex;"><span>    model_kwargs<span style="color:#0550ae">=</span><span style="color:#1f2328">{</span><span style="color:#0a3069">&#34;torch_dtype&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;auto&#34;</span><span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>    device_map<span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;auto&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>messages <span style="color:#0550ae">=</span> <span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">{</span><span style="color:#0a3069">&#34;role&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;system&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;content&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;You are a medieval knight and must provide explanations to modern people.&#34;</span><span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">{</span><span style="color:#0a3069">&#34;role&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;user&#34;</span><span style="color:#1f2328">,</span> <span style="color:#0a3069">&#34;content&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;How should I explain the Internet?&#34;</span><span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>outputs <span style="color:#0550ae">=</span> pipeline<span style="color:#1f2328">(</span>messages<span style="color:#1f2328">,</span> max_new_tokens<span style="color:#0550ae">=</span><span style="color:#0550ae">1024</span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#6639ba">print</span><span style="color:#1f2328">(</span>outputs<span style="color:#1f2328">[</span><span style="color:#0550ae">0</span><span style="color:#1f2328">][</span><span style="color:#0a3069">&#34;generated_text&#34;</span><span style="color:#1f2328">][</span><span style="color:#0550ae">-</span><span style="color:#0550ae">1</span><span style="color:#1f2328">])</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>📌 <em>Note: Since InfiGFusion uses <code>phi-4</code> as its pivot model during fusion, it inherits many of its usage patterns and prompt compatibility features.</em></p></blockquote>
+<h2 id="-model-quality">🎯 Model Quality</h2>
+<p><img src="assets/inference.png" alt="InfiGFusion"></p>
+<h2 id="-responsible-ai-considerations">✅ Responsible AI Considerations</h2>
+<p>Like other large language models, <code>InfiGFusion</code> may exhibit behaviors that raise concerns around fairness, safety, and reliability. While our fusion framework enhances reasoning and relational inference, the foundation models it integrates—including the pivot model <code>phi-4</code>—carry inherited limitations. Users should be aware of the following considerations:</p>
+<ul>
+<li>
+<p><strong>Language Coverage &amp; Bias:</strong>
+InfiGFusion is primarily trained and evaluated on English datasets. Its performance on non-English inputs may be degraded. Moreover, any biases or stereotypes present in the underlying models or datasets may be preserved or amplified through the fusion process.</p>
+</li>
+<li>
+<p><strong>Representation of Harms &amp; Perpetuation of Stereotypes:</strong>
+The fused models may over- or under-represent certain groups or reinforce societal stereotypes. Although quality filters and alignment procedures are used, they cannot fully eliminate harmful representations due to real-world imbalances in the data sources.</p>
+</li>
+<li>
+<p><strong>Content Safety:</strong>
+The model may generate inappropriate, offensive, or unsafe content, especially in unconstrained or adversarial inputs. It is not recommended for use in sensitive domains (e.g., mental health, legal advice) without additional safeguards.</p>
+</li>
+<li>
+<p><strong>Fused Behavior Complexity:</strong>
+Due to the fusion of multiple distinct models, <code>InfiGFusion</code> may exhibit complex or emergent behaviors not present in any single model. This makes interpretability and debugging more challenging, especially in high-risk applications.</p>
+</li>
+<li>
+<p><strong>Factuality &amp; Hallucination:</strong>
+Like other generative models, <code>InfiGFusion</code> may produce convincing yet factually incorrect or outdated content. Developers should not rely on model output as a source of truth and are encouraged to integrate verification mechanisms such as Retrieval-Augmented Generation (RAG).</p>
+</li>
+<li>
+<p><strong>Code Generation Limitations:</strong>
+While <code>InfiGFusion</code> includes training on code-related datasets, it may still produce invalid, unsafe, or incomplete code snippets. Outputs involving unfamiliar libraries or languages should be carefully reviewed before use.</p>
+</li>
+</ul>
+<hr>
+<h3 id="developer-responsibilities">Developer Responsibilities</h3>
+<p>Developers using <code>InfiGFusion</code> are encouraged to:</p>
+<ul>
+<li><strong>Evaluate outputs contextually</strong>, particularly for fairness, accuracy, and safety.</li>
+<li><strong>Follow all applicable laws and regulations</strong>, including those relating to privacy, trade compliance, and data use.</li>
+<li><strong>Avoid deployment in high-stakes decision-making</strong> (e.g., employment, finance, law enforcement) without extensive validation and domain-specific safeguards.</li>
+<li><strong>Clearly disclose to users</strong> that they are interacting with an AI system, following transparency and responsible AI best practices.</li>
+</ul>
+<p>By using this model, you agree to evaluate and manage risks responsibly and ensure your applications align with ethical and regulatory expectations.</p>
+<h2 id="-bibtex-citation">🗒️ BibTex Citation</h2>
+<p>If you find this work helpful, feel free to give us a cite.</p>
+<pre tabindex="0"><code class="language-bigquery" data-lang="bigquery">@article{wang2025infigfusion,
+  title={InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion},
+  author={Wang, Yuanyi and Yan, Zhaoyi and Zhang, Yiming and Zhou, Qi and Gu, Yanggan and Wu, Fei and Yang, Hongxia},
+  journal={arXiv preprint arXiv:2505.13893},
+  year={2025}
+}
+</code></pre>
+        </div>
+        
+        
+        <nav class="article-nav">
+            
+            <a href="http://infixai.github.io/research/infiguiagent/" class="nav-link nav-prev">
+                ← InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection
+            </a>
+            
+            
+            
+            <a href="http://infixai.github.io/research/infifpo/" class="nav-link nav-next">
+                InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models →
+            </a>
+            
+        </nav>
+    </article>
+</div>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; Copyright 2025 InfiX.ai or its affiliates</p>
+        </div>
+    </div>
+</footer>
+    
+    
+    <script src="/js/main.js"></script>
+    <script src="/js/research.js"></script>
+</body>
+</html>

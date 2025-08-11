@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ppo on InfiX-AI</title>
+    <link>http://localhost:1313/tags/ppo/</link>
+    <description>Recent content in Ppo on InfiX-AI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ppo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InfiPPO-14B</title>
+      <link>http://localhost:1313/models/-infifpo-14b/</link>
+      <pubDate>Sat, 20 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/models/-infifpo-14b/</guid>
+      <description>Large-scale preference learning model with enhanced fusion capabilities for human alignment.</description>
+    </item>
+  </channel>
+</rss>

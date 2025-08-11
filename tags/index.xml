@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on InfiX-AI</title>
+    <link>http://infixai.github.io/tags/</link>
+    <description>Recent content in Tags on InfiX-AI</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jul 2025 11:50:11 +0000</lastBuildDate>
+    <atom:link href="http://infixai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agent Training</title>
+      <link>http://infixai.github.io/tags/agent-training/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/agent-training/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Android</title>
+      <link>http://infixai.github.io/tags/android/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/android/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Control</title>
+      <link>http://infixai.github.io/tags/control/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/control/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Evaluation</title>
+      <link>http://infixai.github.io/tags/evaluation/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/evaluation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GUI Agent</title>
+      <link>http://infixai.github.io/tags/gui-agent/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/gui-agent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GUI Interaction</title>
+      <link>http://infixai.github.io/tags/gui-interaction/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/gui-interaction/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multimodal</title>
+      <link>http://infixai.github.io/tags/multimodal/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/multimodal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Question-Answer</title>
+      <link>http://infixai.github.io/tags/question-answer/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/question-answer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reasoning</title>
+      <link>http://infixai.github.io/tags/reasoning/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/reasoning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Refined Data</title>
+      <link>http://infixai.github.io/tags/refined-data/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/refined-data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Small Dataset</title>
+      <link>http://infixai.github.io/tags/small-dataset/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/small-dataset/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Task Automation</title>
+      <link>http://infixai.github.io/tags/task-automation/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/task-automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test Data</title>
+      <link>http://infixai.github.io/tags/test-data/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/test-data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Training Data</title>
+      <link>http://infixai.github.io/tags/training-data/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/training-data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Updated Version</title>
+      <link>http://infixai.github.io/tags/updated-version/</link>
+      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/updated-version/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cross-Model Reasoning</title>
+      <link>http://infixai.github.io/tags/cross-model-reasoning/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/cross-model-reasoning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DPO</title>
+      <link>http://infixai.github.io/tags/dpo/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/dpo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Error Recovery</title>
+      <link>http://infixai.github.io/tags/error-recovery/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/error-recovery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Graph-on-Logits</title>
+      <link>http://infixai.github.io/tags/graph-on-logits/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/graph-on-logits/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gromov-Wasserstein Loss</title>
+      <link>http://infixai.github.io/tags/gromov-wasserstein-loss/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/gromov-wasserstein-loss/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Instruct</title>
+      <link>http://infixai.github.io/tags/instruct/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/instruct/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Logit Distillation</title>
+      <link>http://infixai.github.io/tags/logit-distillation/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/logit-distillation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Low-Resource Training</title>
+      <link>http://infixai.github.io/tags/low-resource-training/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/low-resource-training/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Model Fusion</title>
+      <link>http://infixai.github.io/tags/model-fusion/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/model-fusion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Planning</title>
+      <link>http://infixai.github.io/tags/planning/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/planning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Preference Optimization</title>
+      <link>http://infixai.github.io/tags/preference-optimization/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/preference-optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Small Language Model</title>
+      <link>http://infixai.github.io/tags/small-language-model/</link>
+      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/small-language-model/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI Research</title>
+      <link>http://infixai.github.io/tags/ai-research/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/ai-research/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Computer Vision</title>
+      <link>http://infixai.github.io/tags/computer-vision/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multimodal LLM</title>
+      <link>http://infixai.github.io/tags/multimodal-llm/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/multimodal-llm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reinforcement Learning</title>
+      <link>http://infixai.github.io/tags/reinforcement-learning/</link>
+      <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/reinforcement-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alignment</title>
+      <link>http://infixai.github.io/tags/alignment/</link>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/alignment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Direct Preference Optimization</title>
+      <link>http://infixai.github.io/tags/direct-preference-optimization/</link>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/direct-preference-optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Large Language Models</title>
+      <link>http://infixai.github.io/tags/large-language-models/</link>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/large-language-models/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>http://infixai.github.io/tags/automation/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Large Language Model</title>
+      <link>http://infixai.github.io/tags/large-language-model/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/large-language-model/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Graph Neural Networks</title>
+      <link>http://infixai.github.io/tags/graph-neural-networks/</link>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/graph-neural-networks/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gromov-Wasserstein</title>
+      <link>http://infixai.github.io/tags/gromov-wasserstein/</link>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/gromov-wasserstein/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Knowledge Distillation</title>
+      <link>http://infixai.github.io/tags/knowledge-distillation/</link>
+      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/knowledge-distillation/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

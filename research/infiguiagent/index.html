@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<title>InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection | InfiX-AI</title>
+<meta name="description" content="A multimodal large language model-based GUI agent that enables enhanced task automation on computing devices through hierarchical reasoning and expectation-reflection reasoning.">
+<meta name="keywords" content="关键词1,关键词2">
+<meta name="author" content="作者名">
+
+
+<meta property="og:title" content="InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection">
+<meta property="og:description" content="A multimodal large language model-based GUI agent that enables enhanced task automation on computing devices through hierarchical reasoning and expectation-reflection reasoning.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://infixai.github.io/research/infiguiagent/">
+<meta property="og:site_name" content="InfiX-AI">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection">
+<meta name="twitter:description" content="A multimodal large language model-based GUI agent that enables enhanced task automation on computing devices through hierarchical reasoning and expectation-reflection reasoning.">
+
+
+
+<link rel="canonical" href="http://infixai.github.io/research/infiguiagent/">
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+    <link rel="stylesheet" href="/css/research.css">
+    <link rel="stylesheet" href="/css/research-single.css">
+    
+    
+</head>
+<body>
+    <nav class="navbar scrolled">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="http://infixai.github.io/" class="brand-link">
+                <picture>
+                    <img src="/images/infix-ai-logo.png" 
+                         alt="InfiX.ai" 
+                         class="brand-logo-img"
+                         onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                </picture>
+                
+                <div class="brand-logo-fallback" style="display: none;">
+                    <span class="logo-text">InfiX.ai</span>
+                </div>
+            </a>
+        </div>
+        
+        <div class="nav-menu">
+            
+                
+                    <a href="/" class="nav-link">
+                        Home
+                    </a>
+                
+            
+                
+                    <a href="/research/" class="nav-link">
+                        Research
+                    </a>
+                
+            
+                
+                    <a href="/about/" class="nav-link">
+                        About Us
+                    </a>
+                
+            
+                
+                    <a href="https://github.com/InfiXAI" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-github" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="nav-text">GitHub</span>
+                        
+                    </a>
+                
+            
+                
+                    <a href="https://huggingface.co/InfiX-ai" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-huggingface" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM6.624 17.043c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zm10.729 0c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zM12 14.908c-1.141 0-2.067-.926-2.067-2.067S10.859 10.774 12 10.774s2.067.926 2.067 2.067S13.141 14.908 12 14.908z"/>
+                            </svg>
+                            <span class="nav-text">HuggingFace</span>
+                        
+                    </a>
+                
+            
+        </div>
+    </div>
+</nav>
+    
+    <main class="page-content">
+        
+
+<div class="research-single-container">
+    <div class="research-single-layout">
+       
+        
+        <header class="research-article-header">
+            
+            <div class="research-article-meta">
+                <span class="research-article-category" data-category="">
+                    
+                </span>
+                <time class="research-article-date" datetime="2025-01-09">
+                    January 9, 2025
+                </time>
+            </div>
+            
+            
+            <h1 class="research-article-title">InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection</h1>
+            
+            
+            
+            
+            
+            
+            <div class="research-article-tags">
+                
+                    <span class="research-article-tag">GUI Agent</span>
+                
+                    <span class="research-article-tag">Multimodal</span>
+                
+                    <span class="research-article-tag">Large Language Model</span>
+                
+                    <span class="research-article-tag">Computer Vision</span>
+                
+                    <span class="research-article-tag">Automation</span>
+                
+            </div>
+            
+            
+            
+            <div class="research-article-links">
+                
+                
+                
+                
+                
+            </div>
+        </header>
+
+        
+        <article class="research-article-content">
+            <h1 align="center">
+<img src="images/InfiGUIAgent_logo.jpg" width="100" alt="ToRA" />
+<br>
+InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection
+</h1>
+<br>
+<div align="center" style="margin: 20px 0; display: flex; justify-content: center; gap: 15px;"> | 
+    <a href="https://b7277.github.io/InfiGUIAgent.github.io/" style="padding: 8px 15px; background-color: #2F4F4F; color: white; border-radius: 5px; text-decoration: none; transition: all 0.3s;">🏠 Homepage</a> | 
+    <a href="https://arxiv.org/abs/2501.04575" style="padding: 8px 15px; background-color: #B22222; color: white; border-radius: 5px; text-decoration: none; transition: all 0.3s;">📚 Arxiv</a> | 
+    <a href="https://huggingface.co/papers/2501.04575" style="padding: 8px 15px; background-color: #FFD700; color: black; border-radius: 5px; text-decoration: none; transition: all 0.3s;">🤗 Paper</a> | 
+    <a href="https://huggingface.co/collections/Reallm-Labs/infiguiagent-67a4e4bdfbba9036a1700d97" style="padding: 8px 15px; background-color: #6495ED; color: white; border-radius: 5px; text-decoration: none; transition: all 0.3s;">🤗 Collection</a> | 
+</div>
+<br>
+<p>This is the repo for the paper &ldquo;<a href="https://huggingface.co/papers/2501.04575">InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection</a>&rdquo;. In this work, we develop a multimodal large language model-based GUI agent that enables enhanced task automation on computing devices. Our agent is trained through a two-stage supervised fine-tuning approach that focuses on fundamental GUI understanding skills and advanced reasoning capabilities, where we integrate hierarchical reasoning and expectation-reflection reasoning to enable native reasoning abilities in GUI interactions.</p>
+<h2 id="--news">🔥  News</h2>
+<ul>
+<li>🔥[2025/5/15] Our paper &ldquo;<a href="https://os-agent-survey.github.io/">OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use</a>&rdquo; is accepted by <em>ACL 2025</em>.</li>
+<li>🔥[2025/4/19] Our paper &ldquo;<a href="https://arxiv.org/abs/2504.14239">InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners</a>&rdquo; released. More information can be found in <a href="https://github.com/Reallm-Labs/InfiGUI-R1">the repository</a>.</li>
+<li>🔥[2025/1/9] Our paper &ldquo;<a href="https://arxiv.org/abs/2501.04575">InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection</a>&rdquo; released.</li>
+<li>🔥[2024/12/12] Our paper &ldquo;<a href="https://os-agent-survey.github.io/">OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use</a>&rdquo; released.</li>
+<li>[2024/4/2] Our paper &ldquo;<a href="https://infiagent.github.io/">InfiAgent-DABench: Evaluating Agents on Data Analysis Tasks</a>&rdquo; is accepted by <em>ICML 2024</em>.</li>
+</ul>
+<h2 id="infiguiagent">InfiGUIAgent</h2>
+<p>We are in the process of uploading key artifacts from our paper to our 🤗 <a href="https://huggingface.co/collections/Reallm-Labs/infiguiagent-67a4e4bdfbba9036a1700d97">Hugging Face Collection</a>.</p>
+<p>Regarding the full model release, due to licensing restrictions on portions of our training data from third-party sources, we are currently sanitizing the dataset and retraining/refining the final model to ensure full compliance while maintaining performance.</p>
+<p>Stay tuned for updates! 🔜</p>
+
+        </article>
+        
+    </div>
+</div>
+
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        
+        const button = event.target.closest('.research-copy-link');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Copied!';
+        button.style.color = '#10b981';
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.style.color = '';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tocLinks = document.querySelectorAll('.research-toc-nav a[href^="#"]');
+    
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = 80; 
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                const tocLink = document.querySelector(`.research-toc-nav a[href="#${id}"]`);
+                
+                
+                document.querySelectorAll('.research-toc-nav a').forEach(link => {
+                    link.classList.remove('research-active');
+                });
+                
+                
+                if (tocLink) {
+                    tocLink.classList.add('research-active');
+                }
+            }
+        });
+    }, {
+        rootMargin: '-80px 0px -80% 0px'
+    });
+    
+    
+    document.querySelectorAll('.research-article-content h1, .research-article-content h2, .research-article-content h3, .research-article-content h4, .research-article-content h5, .research-article-content h6').forEach(heading => {
+        observer.observe(heading);
+    });
+});
+</script>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; Copyright 2025 InfiX.ai or its affiliates</p>
+        </div>
+    </div>
+</footer>
+    
+    
+    <script src="/js/main.js"></script>
+    <script src="/js/research.js"></script>
+</body>
+</html>

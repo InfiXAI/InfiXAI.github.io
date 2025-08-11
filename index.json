@@ -1,0 +1,143 @@
+{
+  "title": "InfiX-AI",
+  "description": "InfiX.ai Team Blog - GenAI for all, Intelligence in every task",
+  "baseURL": "http://infixai.github.io/",
+  "pages": [
+    {
+      "title": "InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners",
+      "url": "http://infixai.github.io/research/infigui-r1/",
+      "date": "2025-04-19",
+      "description": "We present InfiGUI-R1, a novel GUI agent that combines spatial reasoning with reinforcement learning to achieve superior performance in GUI automation tasks across desktop, mobile, and web platforms.",
+      "tags": ["GUI Agent","Multimodal LLM","Reinforcement Learning","Computer Vision","AI Research"],
+      "categories": ["Research","AI","Machine Learning"]
+    },
+    {
+      "title": "InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models",
+      "url": "http://infixai.github.io/research/infifpo/",
+      "date": "2025-01-17",
+      "description": "\u003cp\u003eWe propose \u003cstrong\u003eInfiFPO\u003c/strong\u003e, a principled and efficient framework for performing model fusion during the preference alignment phase. Our key insight is that the reference model in preference optimization (e.g., in DPO) can be replaced with a fused source model, thereby enabling the pivot model to learn not only from preference data but also from the probabilistic behaviors of multiple source models.\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"assets/exp.png\" alt=\"InfiFPO\"\u003e\u003c/p\u003e\n\u003cp\u003eComprehensive experiments on 11 widely-used benchmarks demonstrate that \u003cstrong\u003eInfiFPO\u003c/strong\u003e consistently outperforms existing model fusion and preference optimization methods. When using Phi-4 as the pivot model, \u003cstrong\u003eInfiFPO\u003c/strong\u003e improve its average performance from 79.95 to 83.33 on 11 benchmarks, significantly improving its capabilities in mathematics, coding, and reasoning tasks.\u003c/p\u003e",
+      "tags": ["Model Fusion","Preference Optimization","Direct Preference Optimization","Large Language Models","Alignment"],
+      "categories": null
+    },
+    {
+      "title": "InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion",
+      "url": "http://infixai.github.io/research/infigfusion/",
+      "date": "2024-12-20",
+      "description": "The first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs with novel Graph-on-Logits Distillation (GLD) loss.",
+      "tags": ["Graph Neural Networks","Knowledge Distillation","Gromov-Wasserstein","Model Fusion","Large Language Models"],
+      "categories": ["Research","Publications","AI"]
+    },
+    {
+      "title": "android_control_test",
+      "url": "http://infixai.github.io/huggingface.co/datasets/InfiX-ai/android_control_test",
+      "date": "2025-07-31",
+      "description": "Test dataset for evaluating Android control models, complementing the training set with unseen scenarios to assess generalization and performance of automation agents on Android interfaces.",
+      "tags": ["android","control","test data","evaluation"],
+      "categories": null
+    },
+    {
+      "title": "android_control_train",
+      "url": "http://infixai.github.io/huggingface.co/datasets/InfiX-ai/android_control_train",
+      "date": "2025-07-31",
+      "description": "Training dataset for Android control tasks, likely containing interaction data, command sequences, or GUI operation logs to support the development of Android-based automation agents.",
+      "tags": ["android","control","training data","GUI interaction"],
+      "categories": null
+    },
+    {
+      "title": "InfiGUIAgent-Data",
+      "url": "http://infixai.github.io/huggingface.co/datasets/InfiX-ai/InfiGUIAgent-Data",
+      "date": "2025-07-31",
+      "description": "Specialized dataset for training InfiGUIAgent models, containing multimodal data (e.g., GUI screenshots, user actions, task descriptions) to enable robust GUI task automation and reasoning.",
+      "tags": ["GUI agent","multimodal","task automation","agent training"],
+      "categories": null
+    },
+    {
+      "title": "s1K-1.1-850",
+      "url": "http://infixai.github.io/huggingface.co/datasets/InfiX-ai/s1K-1.1-850",
+      "date": "2025-07-31",
+      "description": "An updated version (1.1) of a small dataset, likely containing 850 samples (inferred from '850'). May extend or refine the content of 's1K-QwQ' for more targeted model training.",
+      "tags": ["small dataset","updated version","refined data"],
+      "categories": null
+    },
+    {
+      "title": "s1K-QwQ",
+      "url": "http://infixai.github.io/huggingface.co/datasets/InfiX-ai/s1K-QwQ",
+      "date": "2025-07-31",
+      "description": "A dataset with 's1K' (likely 1,000 samples) in its name, potentially focused on question-answer pairs, dialogue, or reasoning tasks, supporting model training in conversational or logical reasoning abilities.",
+      "tags": ["small dataset","question-answer","reasoning"],
+      "categories": null
+    },
+    {
+      "title": "Infi-MMR-3B",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/Infi-MMR-3B",
+      "date": "2025-07-31",
+      "description": "A multimodal model developed via the InfiMMR three-phase curriculum framework, enhancing multimodal reasoning capabilities in small language models.",
+      "tags": ["multimodal","reasoning","small language model"],
+      "categories": null
+    },
+    {
+      "title": "InfiFPO-14B",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/InfiFPO-14B",
+      "date": "2025-07-31",
+      "description": "A lightweight fusion method during the preference alignment phase that injects fused model behavior into preference learning.",
+      "tags": ["preference optimization","DPO","model fusion"],
+      "categories": null
+    },
+    {
+      "title": "InfiFusion-14B",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/InfiFusion-14B",
+      "date": "2025-07-31",
+      "description": "A logit-level fusion pipeline based on Universal Logit Distillation, enhanced with Top-K filtering and logits standardization. Supports both pairwise and unified fusion strategies to balance performance and efficiency.",
+      "tags": ["model fusion","logit distillation","cross-model reasoning"],
+      "categories": null
+    },
+    {
+      "title": "InfiGFusion-14B",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/InfiGFusion-14B",
+      "date": "2025-07-31",
+      "description": "A structure-aware extension that builds co-activation graphs from logits and aligns them via an efficient Gromov-Wasserstein loss approximation.",
+      "tags": ["model fusion","graph-on-logits","Gromov-Wasserstein loss"],
+      "categories": null
+    },
+    {
+      "title": "InfiGUI-R1-3B",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-R1-3B",
+      "date": "2025-07-31",
+      "description": "A GUI agent developed via the Actor2Reasoner framework, evolving a reactive model into a deliberative reasoner through spatial reasoning distillation and reinforcement learning.",
+      "tags": ["GUI agent","multimodal","planning","error recovery"],
+      "categories": null
+    },
+    {
+      "title": "InfiGUIAgent-2B-Stage1",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUIAgent-2B-Stage1",
+      "date": "2025-07-31",
+      "description": "A multimodal generalist GUI agent with native hierarchical and expectation-reflection reasoning through a unique two-stage supervised pipeline.",
+      "tags": ["GUI agent","multimodal","task automation"],
+      "categories": null
+    },
+    {
+      "title": "InfiR-1B-Base",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/InfiR-1B-Base",
+      "date": "2025-07-31",
+      "description": "Part of the InfiR reasoning-enhanced low-resource training pipeline, crafted to be an effective small language model with improved reasoning.",
+      "tags": ["small language model","reasoning","low-resource training"],
+      "categories": null
+    },
+    {
+      "title": "InfiR-1B-Instruct",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/InfiR-1B-Instruct",
+      "date": "2025-07-31",
+      "description": "An instructed version of the InfiR small language model, part of the reasoning-enhanced low-resource training pipeline.",
+      "tags": ["small language model","reasoning","instruct"],
+      "categories": null
+    },
+    {
+      "title": "InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection",
+      "url": "http://infixai.github.io/research/infiguiagent/",
+      "date": "2025-01-09",
+      "description": "A multimodal large language model-based GUI agent that enables enhanced task automation on computing devices through hierarchical reasoning and expectation-reflection reasoning.",
+      "tags": ["GUI Agent","Multimodal","Large Language Model","Computer Vision","Automation"],
+      "categories": ["Research","AI Agents","Human-Computer Interaction"]
+    }
+  ]
+}
