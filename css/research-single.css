@@ -653,7 +653,7 @@
 @media (max-width: 768px) {
   .research-single-container {
     padding-top: 42px;
-    max-width: 94%;
+    max-width: 100%;
   }
 
   .research-single-layout {
