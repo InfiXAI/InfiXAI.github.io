@@ -58,6 +58,13 @@
             </a>
         </div>
         
+        
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
         <div class="nav-menu">
             
                 
@@ -103,6 +110,38 @@
         </div>
     </div>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+    });
+    
+    
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        });
+    });
+    
+    
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+    });
+});
+</script>
     
     <main class="page-content">
         
@@ -138,7 +177,31 @@
         
         <article class="research-item">
           <div class="item-meta">
-            <span class="item-category"></span>
+            <span class="item-category">PUBLICATION</span>
+            <time class="item-date">2025</time>
+          </div>
+          <h3 class="item-title">
+            <a href="http://infixai.github.io/research/infigui-g1/">InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy …</a>
+          </h3>
+          <p class="item-description">
+            
+              We introduce InfiGUI-G1, a multimodal GUI agent that employs Adaptive Exploration Policy Optimization (AEPO) to improve …
+            
+          </p>
+          <div class="item-footer">
+            <a href="http://infixai.github.io/research/infigui-g1/" class="item-link">
+              Read More
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/>
+                <path d="M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+        
+        <article class="research-item">
+          <div class="item-meta">
+            <span class="item-category">PUBLICATION</span>
             <time class="item-date">2025</time>
           </div>
           <h3 class="item-title">
@@ -184,30 +247,6 @@
           </div>
         </article>
         
-        <article class="research-item">
-          <div class="item-meta">
-            <span class="item-category">PUBLICATION</span>
-            <time class="item-date">2024</time>
-          </div>
-          <h3 class="item-title">
-            <a href="http://infixai.github.io/research/infigfusion/">InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for …</a>
-          </h3>
-          <p class="item-description">
-            
-              The first structure-aware fusion framework for large language models that models semantic dependencies among logits …
-            
-          </p>
-          <div class="item-footer">
-            <a href="http://infixai.github.io/research/infigfusion/" class="item-link">
-              Read More
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14"/>
-                <path d="M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          </div>
-        </article>
-        
       </div>
       <div class="section-footer">
         <a href="/research/" class="view-all-btn">
@@ -229,16 +268,12 @@
           <div class="stat-label">Research Papers</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">14B</div>
-          <div class="stat-label">Model Parameters</div>
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Open Models</div>
         </div>
         <div class="stat-card">
-          <div class="stat-number">35%</div>
-          <div class="stat-label">Performance Gain</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">Open</div>
-          <div class="stat-label">Source Models</div>
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Open Datasets</div>
         </div>
       </div>
     </div>

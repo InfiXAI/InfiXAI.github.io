@@ -6,13 +6,13 @@
 
     
 <title>InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion | InfiX-AI</title>
-<meta name="description" content="The first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs with novel Graph-on-Logits Distillation (GLD) loss.">
-<meta name="keywords" content="Graph Neural Networks,Knowledge Distillation,Gromov-Wasserstein,Model Fusion,Large Language Models,LLM,AI,Machine Learning">
-<meta name="author" content="作者名">
+<meta name="description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
+<meta name="keywords" content="Graph Neural Networks,Model Fusion,Gromov-Wasserstein">
+<meta name="author" content="InfiX.ai Team">
 
 
 <meta property="og:title" content="InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion">
-<meta property="og:description" content="The first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs with novel Graph-on-Logits Distillation (GLD) loss.">
+<meta property="og:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://infixai.github.io/research/infigfusion/">
 <meta property="og:site_name" content="InfiX-AI">
@@ -21,7 +21,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion">
-<meta name="twitter:description" content="The first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs with novel Graph-on-Logits Distillation (GLD) loss.">
+<meta name="twitter:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
 
 
 
@@ -57,6 +57,13 @@
                 </div>
             </a>
         </div>
+        
+        
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
         
         <div class="nav-menu">
             
@@ -103,61 +110,121 @@
         </div>
     </div>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+    });
+    
+    
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        });
+    });
+    
+    
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+    });
+});
+</script>
     
     <main class="page-content">
         
-<div class="hero-gradient hero-small">
-    <div class="container">
-        <h1 class="hero-title">InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion</h1>
-    </div>
-</div>
 
-<div class="article-container">
-    <article class="article">
-        <header class="article-header">
+<div class="research-single-container">
+    <div class="research-single-layout">
+       
+        
+        <header class="research-article-header">
+            
+            <div class="research-article-meta">
+                <span class="research-article-category" data-category="publication">
+                    PUBLICATION
+                </span>
+                <time class="research-article-date" datetime="2025-05-20">
+                    May 20, 2025
+                </time>
+            </div>
             
             
-            <div class="post-tags">
+            <h1 class="research-article-title">InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion</h1>
+            
+            
+            
+            
+            
+            
+            <div class="research-article-tags">
                 
-                <span class="tag">Graph Neural Networks</span>
+                    <span class="research-article-tag">Graph Neural Networks</span>
                 
-                <span class="tag">Knowledge Distillation</span>
+                    <span class="research-article-tag">Knowledge Distillation</span>
                 
-                <span class="tag">Gromov-Wasserstein</span>
+                    <span class="research-article-tag">Gromov-Wasserstein</span>
                 
-                <span class="tag">Model Fusion</span>
+                    <span class="research-article-tag">Model Fusion</span>
                 
-                <span class="tag">Large Language Models</span>
+                    <span class="research-article-tag">Large Language Models</span>
                 
             </div>
             
             
             
-            <div class="article-meta">
-                <span class="meta-item">
-                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
-                    </svg>
-                    December 20, 2024
-                </span>
+            <div class="research-article-links">
                 
-                <span class="meta-item">
-                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                <a href="https://arxiv.org/abs/2505.13893" target="_blank" rel="noopener noreferrer" class="research-external-link research-arxiv-link">
+                    <svg class="research-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10,9 9,9 8,9"/>
                     </svg>
-                    7 min read
-                </span>
+                    View on arXiv
+                </a>
                 
-                <span class="meta-item">
-                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                
+                
+                <a href="https://github.com/InfiXAI/InfiGFusion" target="_blank" rel="noopener noreferrer" class="research-external-link research-github-link">
+                    <svg class="research-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 0-8-3-8-8 0-5.5 2.5-10 7-10 3.5 0 6.5 2.5 7 6.5 0 .5.5 1 1 1s1-.5 1-1c-.5-5-4.5-8.5-9-8.5-6 0-10 5-10 11 0 6 4 10 10 10 2 0 4-.5 5.5-1.5"/>
+                        <path d="M15 7h4l-4-4"/>
                     </svg>
-                    作者名
-                </span>
+                    View on GitHub
+                </a>
+                
+                
+                
+                <a href="https://huggingface.co/InfiXAI/InfiGFusion-14B" target="_blank" rel="noopener noreferrer" class="research-external-link research-huggingface-link">
+                    <svg class="research-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                        <line x1="9" y1="9" x2="9.01" y2="9"/>
+                        <line x1="15" y1="9" x2="15.01" y2="9"/>
+                    </svg>
+                    View on Hugging Face
+                </a>
+                
             </div>
         </header>
+
         
-        <div class="article-content">
+        <article class="research-article-content">
             <p><strong>InfiGFusion</strong> is the first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs. We introduce a novel Graph-on-Logits Distillation (GLD) loss that captures cross-dimension interactions via co-activation graphs and aligns them using an efficient, provable approximation of Gromov-Wasserstein distance (reducing complexity from O(n^4) to O(nlogn)). Our released <strong>InfiGFusion-14B</strong> model consistently shows better performance, achieving +35.6 on Multistep Arithmetic and +37.06 on Causal Judgement over SFT, demonstrating superior multi-step and complex logic inference.</p>
 <h2 id="-news">🎉 News</h2>
 <p>🎉 The ckpt model, InfiGFusion-14B, has been released on Huggingface! ! !</p>
@@ -441,24 +508,80 @@ While <code>InfiGFusion</code> includes training on code-related datasets, it ma
   year={2025}
 }
 </code></pre>
-        </div>
+        </article>
         
-        
-        <nav class="article-nav">
-            
-            <a href="http://infixai.github.io/research/infiguiagent/" class="nav-link nav-prev">
-                ← InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection
-            </a>
-            
-            
-            
-            <a href="http://infixai.github.io/research/infifpo/" class="nav-link nav-next">
-                InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models →
-            </a>
-            
-        </nav>
-    </article>
+    </div>
 </div>
+
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        
+        const button = event.target.closest('.research-copy-link');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Copied!';
+        button.style.color = '#10b981';
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.style.color = '';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tocLinks = document.querySelectorAll('.research-toc-nav a[href^="#"]');
+    
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = 80; 
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                const tocLink = document.querySelector(`.research-toc-nav a[href="#${id}"]`);
+                
+                
+                document.querySelectorAll('.research-toc-nav a').forEach(link => {
+                    link.classList.remove('research-active');
+                });
+                
+                
+                if (tocLink) {
+                    tocLink.classList.add('research-active');
+                }
+            }
+        });
+    }, {
+        rootMargin: '-80px 0px -80% 0px'
+    });
+    
+    
+    document.querySelectorAll('.research-article-content h1, .research-article-content h2, .research-article-content h3, .research-article-content h4, .research-article-content h5, .research-article-content h6').forEach(heading => {
+        observer.observe(heading);
+    });
+});
+</script>
 
     </main>
     

@@ -6,12 +6,12 @@
     <description>Recent content in Knowledge Distillation on InfiX-AI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://infixai.github.io/tags/knowledge-distillation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion</title>
       <link>http://infixai.github.io/research/infigfusion/</link>
-      <pubDate>Fri, 20 Dec 2024 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
       <guid>http://infixai.github.io/research/infigfusion/</guid>
       <description>&lt;p&gt;&lt;strong&gt;InfiGFusion&lt;/strong&gt; is the first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs. We introduce a novel Graph-on-Logits Distillation (GLD) loss that captures cross-dimension interactions via co-activation graphs and aligns them using an efficient, provable approximation of Gromov-Wasserstein distance (reducing complexity from O(n^4) to O(nlogn)). Our released &lt;strong&gt;InfiGFusion-14B&lt;/strong&gt; model consistently shows better performance, achieving +35.6 on Multistep Arithmetic and +37.06 on Causal Judgement over SFT, demonstrating superior multi-step and complex logic inference.&lt;/p&gt;</description>
     </item>

@@ -6,8 +6,15 @@
     <description>Recent content in Multimodal LLM on InfiX-AI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 19 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://infixai.github.io/tags/multimodal-llm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization</title>
+      <link>http://infixai.github.io/research/infigui-g1/</link>
+      <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/research/infigui-g1/</guid>
+      <description>We introduce InfiGUI-G1, a multimodal GUI agent that employs Adaptive Exploration Policy Optimization (AEPO) to improve semantic alignment in GUI grounding, achieving up to 8.3% relative improvement over baseline methods.</description>
+    </item>
     <item>
       <title>InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners</title>
       <link>http://infixai.github.io/research/infigui-r1/</link>

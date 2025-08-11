@@ -7,8 +7,8 @@
     
 <title>InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners | InfiX-AI</title>
 <meta name="description" content="We present InfiGUI-R1, a novel GUI agent that combines spatial reasoning with reinforcement learning to achieve superior performance in GUI automation tasks across desktop, mobile, and web platforms.">
-<meta name="keywords" content="关键词1,关键词2">
-<meta name="author" content="作者名">
+<meta name="keywords" content="GUI Agents,MLLMs,Reinforcement Learning">
+<meta name="author" content="Yuhang Liu et al.">
 
 
 <meta property="og:title" content="InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners">
@@ -58,6 +58,13 @@
             </a>
         </div>
         
+        
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
         <div class="nav-menu">
             
                 
@@ -103,6 +110,38 @@
         </div>
     </div>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+    });
+    
+    
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        });
+    });
+    
+    
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+    });
+});
+</script>
     
     <main class="page-content">
         
@@ -114,8 +153,8 @@
         <header class="research-article-header">
             
             <div class="research-article-meta">
-                <span class="research-article-category" data-category="">
-                    
+                <span class="research-article-category" data-category="publication">
+                    PUBLICATION
                 </span>
                 <time class="research-article-date" datetime="2025-04-19">
                     April 19, 2025
@@ -159,7 +198,7 @@
         <article class="research-article-content">
             <!-- 添加 hero 图片或横幅 -->
 <div align="center">
-  <img src="images/infigui-r1_logo.png" alt="InfiGUI-R1 Overview" style="max-width: 80%; margin: 20px 0;">
+  <img src="images/infigui-r1_logo.png" alt="InfiGUI-R1 Overview" style="max-width: 10%; margin: 20px 0;">
 </div>
 <!-- 快速链接区域 -->
 <div align="center" style="margin: 20px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
@@ -176,14 +215,6 @@
   <img src="images/screenspot-pro.png" width="70%" alt="Results on ScreenSpot Pro">
   <p><i>Performance results on ScreenSpot Pro benchmark</i></p>
 </div>
-<h2 id="-news">🔥 News</h2>
-<ul>
-<li>🔥 <em><strong><code>2025/05/15</code></strong></em> Our paper &ldquo;<a href="https://os-agent-survey.github.io/">OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use</a>&rdquo; is accepted by <em>ACL 2025</em>.</li>
-<li>🔥 <em><strong><code>2025/4/19</code></strong></em> Our paper &ldquo;<a href="https://arxiv.org/abs/2504.14239">InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners</a>&rdquo; released.</li>
-<li>🔥 <em><strong><code>2025/1/9</code></strong></em> Our paper &ldquo;<a href="https://arxiv.org/abs/2501.04575">InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection</a>&rdquo; released.</li>
-<li>🔥 <em><strong><code>2024/12/12</code></strong></em> Our paper &ldquo;<a href="https://os-agent-survey.github.io/">OS Agents: A Survey on MLLM-based Agents for Computer, Phone and Browser Use</a>&rdquo; released.</li>
-<li><em><strong><code>2024/4/2</code></strong></em> Our paper &ldquo;<a href="https://infiagent.github.io/">InfiAgent-DABench: Evaluating Agents on Data Analysis Tasks</a>&rdquo; is accepted by <em>ICML 2024</em>.</li>
-</ul>
 <h2 id="-updates">🚀 Updates</h2>
 <ul>
 <li><em><strong><code>2025/05/21</code></strong></em> Added <a href="#-evaluation">AndroidControl evaluation</a> methods and uploaded the <a href="https://huggingface.co/datasets/Reallm-Labs/android_control_test">corresponding test data</a>.</li>

@@ -4,6 +4,14 @@
   "baseURL": "http://infixai.github.io/",
   "pages": [
     {
+      "title": "InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization",
+      "url": "http://infixai.github.io/research/infigui-g1/",
+      "date": "2025-08-05",
+      "description": "We introduce InfiGUI-G1, a multimodal GUI agent that employs Adaptive Exploration Policy Optimization (AEPO) to improve semantic alignment in GUI grounding, achieving up to 8.3% relative improvement over baseline methods.",
+      "tags": ["GUI Agent","Multimodal LLM","Reinforcement Learning","Computer Vision","AI Research"],
+      "categories": ["Research","AI","Machine Learning"]
+    },
+    {
       "title": "InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners",
       "url": "http://infixai.github.io/research/infigui-r1/",
       "date": "2025-04-19",
@@ -14,7 +22,7 @@
     {
       "title": "InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models",
       "url": "http://infixai.github.io/research/infifpo/",
-      "date": "2025-01-17",
+      "date": "2025-05-20",
       "description": "\u003cp\u003eWe propose \u003cstrong\u003eInfiFPO\u003c/strong\u003e, a principled and efficient framework for performing model fusion during the preference alignment phase. Our key insight is that the reference model in preference optimization (e.g., in DPO) can be replaced with a fused source model, thereby enabling the pivot model to learn not only from preference data but also from the probabilistic behaviors of multiple source models.\u003c/p\u003e\n\u003cp\u003e\u003cimg src=\"assets/exp.png\" alt=\"InfiFPO\"\u003e\u003c/p\u003e\n\u003cp\u003eComprehensive experiments on 11 widely-used benchmarks demonstrate that \u003cstrong\u003eInfiFPO\u003c/strong\u003e consistently outperforms existing model fusion and preference optimization methods. When using Phi-4 as the pivot model, \u003cstrong\u003eInfiFPO\u003c/strong\u003e improve its average performance from 79.95 to 83.33 on 11 benchmarks, significantly improving its capabilities in mathematics, coding, and reasoning tasks.\u003c/p\u003e",
       "tags": ["Model Fusion","Preference Optimization","Direct Preference Optimization","Large Language Models","Alignment"],
       "categories": null
@@ -22,10 +30,10 @@
     {
       "title": "InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion",
       "url": "http://infixai.github.io/research/infigfusion/",
-      "date": "2024-12-20",
-      "description": "The first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs with novel Graph-on-Logits Distillation (GLD) loss.",
+      "date": "2025-05-20",
+      "description": "\u003cp\u003e\u003cstrong\u003eInfiGFusion\u003c/strong\u003e is the first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs. We introduce a novel Graph-on-Logits Distillation (GLD) loss that captures cross-dimension interactions via co-activation graphs and aligns them using an efficient, provable approximation of Gromov-Wasserstein distance (reducing complexity from O(n^4) to O(nlogn)). Our released \u003cstrong\u003eInfiGFusion-14B\u003c/strong\u003e model consistently shows better performance, achieving +35.6 on Multistep Arithmetic and +37.06 on Causal Judgement over SFT, demonstrating superior multi-step and complex logic inference.\u003c/p\u003e",
       "tags": ["Graph Neural Networks","Knowledge Distillation","Gromov-Wasserstein","Model Fusion","Large Language Models"],
-      "categories": ["Research","Publications","AI"]
+      "categories": null
     },
     {
       "title": "android_control_test",

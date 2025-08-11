@@ -617,7 +617,7 @@ body:not(.home-page) .site-header {
 /* 超小屏幕适配 */
 @media (max-width: 480px) {
     .brand-logo-img {
-        height: 1.25rem; /* 超小屏幕进一步减小 */
+        height: 2.25rem; /* 超小屏幕进一步减小 */
     }
     
     .nav-menu {
@@ -719,5 +719,189 @@ body:not(.home-page) .site-header {
     
     .brand-logo-fallback .logo-text {
         font-size: 0.7rem;
+    }
+}
+
+/* 移动端菜单按钮 */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.nav-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* 移动端响应式设计 */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 2rem 2rem;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-link {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: left;
+        font-size: 1.1rem;
+        color: #333 !important; /* 修复颜色 */
+        text-shadow: none;
+    }
+    
+    .nav-link::after {
+        display: none; /* 移除下划线效果 */
+    }
+    
+    .nav-link:hover {
+        color: #0066cc !important;
+    }
+    
+    /* GitHub 和 HuggingFace 特殊样式修复 */
+    .nav-link-special {
+        color: #333 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        justify-content: flex-start;
+        padding: 1rem 0 !important;
+        border-radius: 0 !important;
+        margin-left: 0 !important;
+        gap: 0.75rem;
+    }
+    
+    .nav-link-special:hover {
+        color: #0066cc !important;
+        background: rgba(0, 102, 204, 0.05) !important;
+        transform: none;
+    }
+    
+    /* 移动端图标颜色修复 */
+    .nav-icon-github {
+        fill: #333 !important;
+    }
+    
+    .nav-icon-huggingface {
+        fill: #333 !important;
+    }
+    
+    .nav-link-special:hover .nav-icon-github,
+    .nav-link-special:hover .nav-icon-huggingface {
+        fill: #0066cc !important;
+    }
+    
+    .nav-text {
+        color: inherit;
+        font-size: 1.1rem;
+    }
+    
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 0.75rem;
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    /* 防止页面滚动 */
+    body.nav-open {
+        overflow: hidden;
+    }
+}
+
+/* 深色主题适配 - 修复颜色 */
+@media (max-width: 768px) {
+    .navbar.scrolled .nav-menu,
+    .navbar:not(.transparent) .nav-menu {
+        background: rgba(30, 41, 59, 0.95);
+        color: white;
+    }
+    
+    .navbar.scrolled .nav-link,
+    .navbar:not(.transparent) .nav-link {
+        color: white !important;
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar.scrolled .nav-link:hover,
+    .navbar:not(.transparent) .nav-link:hover {
+        color: #60a5fa !important;
+    }
+    
+    /* 深色主题下的特殊链接修复 */
+    .navbar.scrolled .nav-link-special,
+    .navbar:not(.transparent) .nav-link-special {
+        color: white !important;
+        background: transparent !important;
+    }
+    
+    .navbar.scrolled .nav-link-special:hover,
+    .navbar:not(.transparent) .nav-link-special:hover {
+        color: #60a5fa !important;
+        background: rgba(96, 165, 250, 0.1) !important;
+    }
+    
+    /* 深色主题下的图标颜色 */
+    .navbar.scrolled .nav-icon-github,
+    .navbar:not(.transparent) .nav-icon-github {
+        fill: white !important;
+    }
+    
+    .navbar.scrolled .nav-icon-huggingface,
+    .navbar:not(.transparent) .nav-icon-huggingface {
+        fill: white !important;
+    }
+    
+    .navbar.scrolled .nav-link-special:hover .nav-icon-github,
+    .navbar:not(.transparent) .nav-link-special:hover .nav-icon-github,
+    .navbar.scrolled .nav-link-special:hover .nav-icon-huggingface,
+    .navbar:not(.transparent) .nav-link-special:hover .nav-icon-huggingface {
+        fill: #60a5fa !important;
     }
 }

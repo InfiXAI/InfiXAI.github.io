@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+<title>InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization | InfiX-AI</title>
+<meta name="description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
+<meta name="keywords" content="GUI Agents,MLLMs,Reinforcement Learning">
+<meta name="author" content="Yuhang Liu et al.">
+
+
+<meta property="og:title" content="InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization">
+<meta property="og:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://infixai.github.io/research/infigui-g1/">
+<meta property="og:site_name" content="InfiX-AI">
+
+
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization">
+<meta name="twitter:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
+
+
+
+<link rel="canonical" href="http://infixai.github.io/research/infigui-g1/">
+
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    
+    <link rel="stylesheet" href="/css/research.css">
+    <link rel="stylesheet" href="/css/research-single.css">
+    
+    
+</head>
+<body>
+    <nav class="navbar scrolled">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <a href="http://infixai.github.io/" class="brand-link">
+                <picture>
+                    <img src="/images/infix-ai-logo.png" 
+                         alt="InfiX.ai" 
+                         class="brand-logo-img"
+                         onerror="this.style.display='none'; this.parentElement.nextElementSibling.style.display='flex';">
+                </picture>
+                
+                <div class="brand-logo-fallback" style="display: none;">
+                    <span class="logo-text">InfiX.ai</span>
+                </div>
+            </a>
+        </div>
+        
+        
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <div class="nav-menu">
+            
+                
+                    <a href="/" class="nav-link">
+                        Home
+                    </a>
+                
+            
+                
+                    <a href="/research/" class="nav-link">
+                        Research
+                    </a>
+                
+            
+                
+                    <a href="/about/" class="nav-link">
+                        About Us
+                    </a>
+                
+            
+                
+                    <a href="https://github.com/InfiXAI" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-github" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            <span class="nav-text">GitHub</span>
+                        
+                    </a>
+                
+            
+                
+                    <a href="https://huggingface.co/InfiX-ai" class="nav-link nav-link-special" target="_blank" rel="noopener noreferrer">
+                        
+                            <svg class="nav-icon nav-icon-huggingface" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987s11.987-5.367 11.987-11.987C24.004 5.367 18.637.001 12.017.001zM6.624 17.043c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zm10.729 0c-1.141 0-2.067-.926-2.067-2.067s.926-2.067 2.067-2.067 2.067.926 2.067 2.067-.926 2.067-2.067 2.067zM12 14.908c-1.141 0-2.067-.926-2.067-2.067S10.859 10.774 12 10.774s2.067.926 2.067 2.067S13.141 14.908 12 14.908z"/>
+                            </svg>
+                            <span class="nav-text">HuggingFace</span>
+                        
+                    </a>
+                
+            
+        </div>
+    </div>
+</nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+    });
+    
+    
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        });
+    });
+    
+    
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+    });
+});
+</script>
+    
+    <main class="page-content">
+        
+
+<div class="research-single-container">
+    <div class="research-single-layout">
+       
+        
+        <header class="research-article-header">
+            
+            <div class="research-article-meta">
+                <span class="research-article-category" data-category="publication">
+                    PUBLICATION
+                </span>
+                <time class="research-article-date" datetime="2025-08-05">
+                    August 5, 2025
+                </time>
+            </div>
+            
+            
+            <h1 class="research-article-title">InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization</h1>
+            
+            
+            
+            
+            
+            
+            <div class="research-article-tags">
+                
+                    <span class="research-article-tag">GUI Agent</span>
+                
+                    <span class="research-article-tag">Multimodal LLM</span>
+                
+                    <span class="research-article-tag">Reinforcement Learning</span>
+                
+                    <span class="research-article-tag">Computer Vision</span>
+                
+                    <span class="research-article-tag">AI Research</span>
+                
+            </div>
+            
+            
+            
+            <div class="research-article-links">
+                
+                
+                
+                
+                
+            </div>
+        </header>
+
+        
+        <article class="research-article-content">
+            <!-- 添加 hero 图片或横幅 -->
+<div align="center">
+  <img src="images/infigui-g1_logo.png" alt="InfiGUI-G1 Overview" style="max-width: 20%; margin: 20px 0;">
+</div>
+<!-- 快速链接区域 -->
+<div align="center" style="margin: 20px 0; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+  <a href="https://arxiv.org/abs/2508.05731" style="padding: 8px 15px; background-color: #B22222; color: white; border-radius: 5px; text-decoration: none;">📚 Paper</a>
+  <a href="https://github.com/InfiXAI/InfiGUI-G1" style="padding: 8px 15px; background-color: #24292e; color: white; border-radius: 5px; text-decoration: none;">💻 Code</a>
+  <a href="https://huggingface.co/infix-ai/InfiGUI-G1-7B" style="padding: 8px 15px; background-color: #FFD700; color: black; border-radius: 5px; text-decoration: none;">🤗 Model</a>
+</div>
+<p>Following the InfiGUI-R1, we observe that Reinforcement Learning with Verifiable Rewards (RLVR) improves data efficiency by optimizing sequential coordinate generation, thereby enhancing spatial alignment.
+However, all existing RLVR methods suffer from a critical yet overlooked limitation: inefficient exploration.
+Because they sample actions solely from the model’s current policy, these methods tend to over exploit <strong>high-confidence errors</strong>, a phenomenon we term the <strong>confidence trap</strong>.
+Once trapped, the model repeatedly chooses an incorrect action with high confidence, failing to explore alternative actions that—although low probability—may be correct.
+This bottlenecks semantic alignment.</p>
+<div align="center">
+  <img src="images/introduction.png" width="40%" alt="Method Overview">
+  <p><i>Why previous RLVR fails</i></p>
+</div>
+<p>In this work, we introduce Adaptive Exploration Policy Optimization (AEPO), a novel policy optimization framework for multimodal large language models that addresses semantic alignment challenges in GUI grounding. Using multi-answer generation and theoretically grounded Adaptive Exploration Reward, InfiGUI-G1-3B and InfiGUI-G1-7B achieve state-of-the-art performance with up to 8.3% relative improvement over baseline methods.</p>
+<div align="center">
+  <img src="images/methodology.png" width="70%" alt="Method Overview">
+  <p><i>Adaptive Exploration Policy Optimization</i></p>
+</div>
+<p>AEPO improves policy learning through three complementary components:</p>
+<ol>
+<li><strong>Multi-Answer Generation</strong> – broadens search space to escape high-confidence traps.</li>
+<li><strong>Adaptive Exploration Reward (AER)</strong> – dynamically balances exploration benefits and costs.</li>
+<li><strong>Collinear Penalty</strong> – ensures spatial diversity in exploration.</li>
+</ol>
+<p>Instead of predicting a single action, AEPO generates <strong>N candidate points</strong> in one forward pass.
+This increases the chance of sampling low-probability but correct actions, especially for semantically challenging cases.</p>
+<p>We define efficiency as <strong>eta = U/C</strong>, where <strong>utility</strong> (<strong>U</strong>) reflects exploration success (+1 if any candidate hits the ground truth, −1 otherwise) and <strong>cost</strong> (<strong>C</strong>) accounts for both proposal size and verification effort via geometric mean.</p>
+<p>If generated points are nearly collinear—indicating a trivial scanning strategy—the accuracy reward is overridden with a strong penalty.
+This encourages <strong>spatially diverse</strong> exploration patterns, improving the effectiveness of multi-answer search.</p>
+<p>Our InfiGUI-G1 models, trained with the AEPO framework, establish new state-of-the-art results among open-source models across a diverse and challenging set of GUI grounding benchmarks:</p>
+<div align="center">
+  <p style="text-align: center; font-size: 1.2em; font-weight: bold; margin-bottom: 0.5rem;">Benchmark Evaluation of InfiGUI-G1-7B</p >
+  <table style="width: 100%; max-width: 750px; border-collapse: collapse; border-top: 2px solid #212529; border-bottom: 2px solid #212529; font-family: sans-serif;">
+      <thead style="background-color: #f8f9fa;">
+          <tr style="border-bottom: 1.5px solid #212529;">
+              <th style="padding: 12px 10px; text-align: left; width: 24.9%; font-weight: 600; color: #343a40;">Model</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">MMBench-GUI</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">ScreenSpot-v2</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">UI-Vision</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">I2E-Bench</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">ScreenSpot-Pro</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 10px; text-align: left;">Qwen2.5-VL-7B</td>
+              <td style="padding: 10px; text-align: center;">33.9</td>
+              <td style="padding: 10px; text-align: center;">88.8</td>
+              <td style="padding: 10px; text-align: center;">0.9</td>
+              <td style="padding: 10px; text-align: center;">53.8</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">GUI-G²-7B</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;"><u>93.3</u></td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">47.5</td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">UI-TARS-7B</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">91.6</td>
+              <td style="padding: 10px; text-align: center;">17.6</td>
+              <td style="padding: 10px; text-align: center;">61.4</td>
+              <td style="padding: 10px; text-align: center;">35.7</td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">UGround-v1-7B</td>
+              <td style="padding: 10px; text-align: center;">65.7</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">12.9</td>
+              <td style="padding: 10px; text-align: center;">70.3</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">UI-TARS-1.5-7B</td>
+              <td style="padding: 10px; text-align: center;">64.3</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">73.2</td>
+              <td style="padding: 10px; text-align: center;"><u>49.6</u></td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">Qwen2.5-VL-72B</td>
+              <td style="padding: 10px; text-align: center;">41.8</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">51.4</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">UGround-v1-72B</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">23.2</td>
+              <td style="padding: 10px; text-align: center;"><u>76.3</u></td>
+              <td style="padding: 10px; text-align: center;">-</td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">UI-TARS-72B</td>
+              <td style="padding: 10px; text-align: center;"><u>74.3</u></td>
+              <td style="padding: 10px; text-align: center;">90.3</td>
+              <td style="padding: 10px; text-align: center;"><u>25.5</u></td>
+              <td style="padding: 10px; text-align: center;">73.7</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+          </tr>
+          <tr>
+              <th colspan="6" style="padding: 10px 12px; text-align: left; font-style: italic; background-color: #f8f9fa; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; color: #343a40;">Ours</th>
+          </tr>
+          <tr style="background-color: #f0f8ff;">
+              <td style="padding: 10px; text-align: left;"><b>InfiGUI-G1-7B</b></td>
+              <td style="padding: 10px; text-align: center;"><b>80.8</b></td>
+              <td style="padding: 10px; text-align: center;"><b>93.5</b></td>
+              <td style="padding: 10px; text-align: center;"><b>26.1</b></td>
+              <td style="padding: 10px; text-align: center;"><b>77.4</b></td>
+              <td style="padding: 10px; text-align: center;"><b>51.9</b></td>
+          </tr>
+          <tr style="background-color: #f0f8ff;">
+              <td style="padding: 10px; text-align: right;"><i>w/ Expl. Success</i></td>
+              <td style="padding: 10px; text-align: center;">86.4</td>
+              <td style="padding: 10px; text-align: center;">95.6</td>
+              <td style="padding: 10px; text-align: center;">34.4</td>
+              <td style="padding: 10px; text-align: center;">83.0</td>
+              <td style="padding: 10px; text-align: center;">58.0</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<p><br><br></p>
+<div align="center">
+  <p style="text-align: center; font-size: 1.2em; font-weight: bold; margin-bottom: 0.5rem;">Benchmark Evaluation of InfiGUI-G1-3B</p >
+  <table style="width: 100%; max-width: 750px; border-collapse: collapse; border-top: 2px solid #212529; border-bottom: 2px solid #212529; font-family: sans-serif;">
+      <thead style="background-color: #f8f9fa;">
+          <tr style="border-bottom: 1.5px solid #212529;">
+              <th style="padding: 12px 10px; text-align: left; width: 24.9%; font-weight: 600; color: #343a40;">Model</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">MMBench-GUI</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">ScreenSpot-v2</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">UI-Vision</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">I2E-Bench</th>
+              <th style="padding: 12px 10px; text-align: center; font-weight: 600; color: #343a40;">ScreenSpot-Pro</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="padding: 10px; text-align: left;">Qwen2.5-VL-3B</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">80.9</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">41.7</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">UI-R1-E-3B</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;"><u>69.1</u></td>
+              <td style="padding: 10px; text-align: center;"><u>33.5</u></td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">Aguvis-7B</td>
+              <td style="padding: 10px; text-align: center;"><u>45.7</u></td>
+              <td style="padding: 10px; text-align: center;">-</td>
+              <td style="padding: 10px; text-align: center;"><u>13.7</u></td>
+              <td style="padding: 10px; text-align: center;">53.2</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+          </tr>
+          <tr>
+              <td style="padding: 10px; text-align: left;">OS-Atlas-7B</td>
+              <td style="padding: 10px; text-align: center;">41.4</td>
+              <td style="padding: 10px; text-align: center;"><u>85.1</u></td>
+              <td style="padding: 10px; text-align: center;">9.0</td>
+              <td style="padding: 10px; text-align: center;">58.6</td>
+              <td style="padding: 10px; text-align: center;">-</td>
+          </tr>
+          <tr>
+              <th colspan="6" style="padding: 10px 12px; text-align: left; font-style: italic; background-color: #f8f9fa; border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6; color: #343a40;">Ours</th>
+          </tr>
+          <tr style="background-color: #f0f8ff;">
+              <td style="padding: 10px; text-align: left;"><b>InfiGUI-G1-3B</b></td>
+              <td style="padding: 10px; text-align: center;"><b>73.4</b></td>
+              <td style="padding: 10px; text-align: center;"><b>91.1</b></td>
+              <td style="padding: 10px; text-align: center;"><b>22.0</b></td>
+              <td style="padding: 10px; text-align: center;"><b>72.6</b></td>
+              <td style="padding: 10px; text-align: center;"><b>45.2</b></td>
+          </tr>
+          <tr style="backgroundColor: #f0f8ff;">
+              <td style="padding: 10px; text-align: right;"><i>w/ Expl. Success</i></td>
+              <td style="padding: 10px; text-align: center;">81.6</td>
+              <td style="padding: 10px; text-align: center;">94.4</td>
+              <td style="padding: 10px; text-align: center;">29.7</td>
+              <td style="padding: 10px; text-align: center;">82.8</td>
+              <td style="padding: 10px; text-align: center;">52.0</td>
+          </tr>
+      </tbody>
+  </table>
+</div>
+<p><br><br></p>
+<h2 id="-citation-information">📚 Citation Information</h2>
+<p>If you find this work useful, citations to the following papers are welcome:</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bibtex" data-lang="bibtex"><span style="display:flex;"><span><span style="color:#1f2328">@misc</span><span style="color:#1f2328">{</span><span style="color:#900;font-weight:bold">liu2025infiguig1advancingguigrounding</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">title</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization}</span><span style="color:#1f2328">,</span> 
+</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">author</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{Yuhang Liu and Zeyu Liu and Shuanghe Zhu and Pengxiang Li and Congkai Xie and Jiasheng Wang and Xueyu Hu and Xiaotian Han and Jianbo Yuan and Xinyao Wang and Shengyu Zhang and Hongxia Yang and Fei Wu}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">year</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{2025}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">eprint</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{2508.05731}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">archivePrefix</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{arXiv}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">primaryClass</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{cs.AI}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#1f2328">url</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{https://arxiv.org/abs/2508.05731}</span><span style="color:#1f2328">,</span> 
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bibtex" data-lang="bibtex"><span style="display:flex;"><span><span style="color:#1f2328">@article</span><span style="color:#1f2328">{</span><span style="color:#900;font-weight:bold">liu2025infigui</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">title</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{InfiGUI-R1: Advancing Multimodal GUI Agents from Reactive Actors to Deliberative Reasoners}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">author</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{Liu, Yuhang and Li, Pengxiang and Xie, Congkai and Hu, Xavier and Han, Xiaotian and Zhang, Shengyu and Yang, Hongxia and Wu, Fei}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">journal</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{arXiv preprint arXiv:2504.14239}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">year</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{2025}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code class="language-bibtex" data-lang="bibtex"><span style="display:flex;"><span><span style="color:#1f2328">@article</span><span style="color:#1f2328">{</span><span style="color:#900;font-weight:bold">liu2025infiguiagent</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">title</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{InfiGUIAgent: A Multimodal Generalist GUI Agent with Native Reasoning and Reflection}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">author</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{Liu, Yuhang and Li, Pengxiang and Wei, Zishu and Xie, Congkai and Hu, Xueyu and Xu, Xinchen and Zhang, Shengyu and Han, Xiaotian and Yang, Hongxia and Wu, Fei}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">journal</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{arXiv preprint arXiv:2501.04575}</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">year</span><span style="color:#1f2328">=</span><span style="color:#0a3069">{2025}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="-acknowledgements">🙏 Acknowledgements</h2>
+<p>We would like to express our gratitude for the following open-source projects: <a href="https://github.com/hiyouga/EasyR1">EasyR1</a>, <a href="https://github.com/volcengine/verl">VERL</a>, <a href="https://github.com/hiyouga/LLaMA-Factory">LLaMA-Factory</a>, and <a href="https://github.com/QwenLM/Qwen2.5-VL">Qwen2.5-VL</a>.</p>
+
+        </article>
+        
+    </div>
+</div>
+
+
+<script>
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        
+        const button = event.target.closest('.research-copy-link');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Copied!';
+        button.style.color = '#10b981';
+        
+        setTimeout(() => {
+            button.innerHTML = originalText;
+            button.style.color = '';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tocLinks = document.querySelectorAll('.research-toc-nav a[href^="#"]');
+    
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                const headerHeight = 80; 
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                const tocLink = document.querySelector(`.research-toc-nav a[href="#${id}"]`);
+                
+                
+                document.querySelectorAll('.research-toc-nav a').forEach(link => {
+                    link.classList.remove('research-active');
+                });
+                
+                
+                if (tocLink) {
+                    tocLink.classList.add('research-active');
+                }
+            }
+        });
+    }, {
+        rootMargin: '-80px 0px -80% 0px'
+    });
+    
+    
+    document.querySelectorAll('.research-article-content h1, .research-article-content h2, .research-article-content h3, .research-article-content h4, .research-article-content h5, .research-article-content h6').forEach(heading => {
+        observer.observe(heading);
+    });
+});
+</script>
+
+    </main>
+    
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>&copy; Copyright 2025 InfiX.ai or its affiliates</p>
+        </div>
+    </div>
+</footer>
+    
+    
+    <script src="/js/main.js"></script>
+    <script src="/js/research.js"></script>
+</body>
+</html>

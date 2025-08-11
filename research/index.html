@@ -58,6 +58,13 @@
             </a>
         </div>
         
+        
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
         <div class="nav-menu">
             
                 
@@ -103,6 +110,38 @@
         </div>
     </div>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+    });
+    
+    
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        });
+    });
+    
+    
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+    });
+});
+</script>
     
     <main class="page-content">
         
@@ -118,7 +157,7 @@
             <div class="filter-tabs">
                 <button class="filter-tab active" data-filter="all">All</button>
                 <button class="filter-tab" data-filter="publication">Publication</button>
-                <button class="filter-tab" data-filter="milestone">Milestone</button>
+                
                 <button class="filter-tab" data-filter="models">
                     Models
                 </button>
@@ -131,9 +170,132 @@
             <div class="research-items">
                 
                     
-                    <article class="research-item" data-category="" id="index">
+                    <article class="research-item" data-category="publication" id="index">
                         <div class="item-meta">
-                            <div class="item-category"></div>
+                            <div class="item-category">PUBLICATION</div>
+                            <div class="item-date">Aug 5, 2025</div>
+                        </div>
+                        <div class="item-content">
+                            <h2 class="item-title">
+                                <a href="http://infixai.github.io/research/infigui-g1/" target="_blank" rel="noopener noreferrer">
+                                    InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization
+                                </a>
+                            </h2>
+                            <p class="item-description">
+                                
+                                    We introduce InfiGUI-G1, a multimodal GUI agent that employs Adaptive Exploration Policy Optimization (AEPO) to improve semantic alignment in GUI grounding, achieving up to 8.3% relative improvement …
+                                
+                            </p>
+                            
+                            
+                            
+                            <div class="item-tags">
+                                
+                                    <span class="tag">GUI Agent</span>
+                                
+                                    <span class="tag">Multimodal LLM</span>
+                                
+                                    <span class="tag">Reinforcement Learning</span>
+                                
+                                    <span class="tag">Computer Vision</span>
+                                
+                                    <span class="tag">AI Research</span>
+                                
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </article>
+                    
+                
+                    
+                    <article class="research-item" data-category="publication" id="index">
+                        <div class="item-meta">
+                            <div class="item-category">PUBLICATION</div>
+                            <div class="item-date">May 20, 2025</div>
+                        </div>
+                        <div class="item-content">
+                            <h2 class="item-title">
+                                <a href="http://infixai.github.io/research/infigfusion/" target="_blank" rel="noopener noreferrer">
+                                    InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion
+                                </a>
+                            </h2>
+                            <p class="item-description">
+                                
+                                    <p><strong>InfiGFusion</strong> is the first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs. We introduce a novel Graph-on-Logits …</p>
+                                
+                            </p>
+                            
+                            
+                            
+                            <div class="item-tags">
+                                
+                                    <span class="tag">Graph Neural Networks</span>
+                                
+                                    <span class="tag">Knowledge Distillation</span>
+                                
+                                    <span class="tag">Gromov-Wasserstein</span>
+                                
+                                    <span class="tag">Model Fusion</span>
+                                
+                                    <span class="tag">Large Language Models</span>
+                                
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </article>
+                    
+                
+                    
+                    <article class="research-item" data-category="publication" id="index">
+                        <div class="item-meta">
+                            <div class="item-category">PUBLICATION</div>
+                            <div class="item-date">May 20, 2025</div>
+                        </div>
+                        <div class="item-content">
+                            <h2 class="item-title">
+                                <a href="http://infixai.github.io/research/infifpo/" target="_blank" rel="noopener noreferrer">
+                                    InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models
+                                </a>
+                            </h2>
+                            <p class="item-description">
+                                
+                                    <p>We propose <strong>InfiFPO</strong>, a principled and efficient framework for performing model fusion during the preference alignment phase. Our key insight is that the reference model in preference optimization …</p>
+                                
+                            </p>
+                            
+                            
+                            
+                            <div class="item-tags">
+                                
+                                    <span class="tag">Model Fusion</span>
+                                
+                                    <span class="tag">Preference Optimization</span>
+                                
+                                    <span class="tag">Direct Preference Optimization</span>
+                                
+                                    <span class="tag">Large Language Models</span>
+                                
+                                    <span class="tag">Alignment</span>
+                                
+                            </div>
+                            
+                            
+                            
+                            
+                        </div>
+                    </article>
+                    
+                
+                    
+                    <article class="research-item" data-category="publication" id="index">
+                        <div class="item-meta">
+                            <div class="item-category">PUBLICATION</div>
                             <div class="item-date">Apr 19, 2025</div>
                         </div>
                         <div class="item-content">
@@ -175,47 +337,6 @@
                     <article class="research-item" data-category="publication" id="index">
                         <div class="item-meta">
                             <div class="item-category">PUBLICATION</div>
-                            <div class="item-date">Jan 17, 2025</div>
-                        </div>
-                        <div class="item-content">
-                            <h2 class="item-title">
-                                <a href="http://infixai.github.io/research/infifpo/" target="_blank" rel="noopener noreferrer">
-                                    InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models
-                                </a>
-                            </h2>
-                            <p class="item-description">
-                                
-                                    <p>We propose <strong>InfiFPO</strong>, a principled and efficient framework for performing model fusion during the preference alignment phase. Our key insight is that the reference model in preference optimization …</p>
-                                
-                            </p>
-                            
-                            
-                            
-                            <div class="item-tags">
-                                
-                                    <span class="tag">Model Fusion</span>
-                                
-                                    <span class="tag">Preference Optimization</span>
-                                
-                                    <span class="tag">Direct Preference Optimization</span>
-                                
-                                    <span class="tag">Large Language Models</span>
-                                
-                                    <span class="tag">Alignment</span>
-                                
-                            </div>
-                            
-                            
-                            
-                            
-                        </div>
-                    </article>
-                    
-                
-                    
-                    <article class="research-item" data-category="" id="index">
-                        <div class="item-meta">
-                            <div class="item-category"></div>
                             <div class="item-date">Jan 9, 2025</div>
                         </div>
                         <div class="item-content">
@@ -243,47 +364,6 @@
                                     <span class="tag">Computer Vision</span>
                                 
                                     <span class="tag">Automation</span>
-                                
-                            </div>
-                            
-                            
-                            
-                            
-                        </div>
-                    </article>
-                    
-                
-                    
-                    <article class="research-item" data-category="publication" id="index">
-                        <div class="item-meta">
-                            <div class="item-category">PUBLICATION</div>
-                            <div class="item-date">Dec 20, 2024</div>
-                        </div>
-                        <div class="item-content">
-                            <h2 class="item-title">
-                                <a href="http://infixai.github.io/research/infigfusion/" target="_blank" rel="noopener noreferrer">
-                                    InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion
-                                </a>
-                            </h2>
-                            <p class="item-description">
-                                
-                                    The first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs with novel Graph-on-Logits Distillation (GLD) loss.
-                                
-                            </p>
-                            
-                            
-                            
-                            <div class="item-tags">
-                                
-                                    <span class="tag">Graph Neural Networks</span>
-                                
-                                    <span class="tag">Knowledge Distillation</span>
-                                
-                                    <span class="tag">Gromov-Wasserstein</span>
-                                
-                                    <span class="tag">Model Fusion</span>
-                                
-                                    <span class="tag">Large Language Models</span>
                                 
                             </div>
                             
@@ -441,7 +521,7 @@
                                     <h3 class="card-title">InfiGUIAgent-2B-Stage1</h3>
                                     <div class="badges">
                                         
-                                            <span class="badge badge-outline">GUI Agent (Stage 1)</span>
+                                            <span class="badge badge-outline">GUI Agent</span>
                                         
                                         
                                             <span class="badge badge-secondary">2B</span>

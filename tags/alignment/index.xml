@@ -6,12 +6,12 @@
     <description>Recent content in Alignment on InfiX-AI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://infixai.github.io/tags/alignment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>InfiFPO: Implicit Model Fusion via Preference Optimization in Large Language Models</title>
       <link>http://infixai.github.io/research/infifpo/</link>
-      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
       <guid>http://infixai.github.io/research/infifpo/</guid>
       <description>&lt;p&gt;We propose &lt;strong&gt;InfiFPO&lt;/strong&gt;, a principled and efficient framework for performing model fusion during the preference alignment phase. Our key insight is that the reference model in preference optimization (e.g., in DPO) can be replaced with a fused source model, thereby enabling the pivot model to learn not only from preference data but also from the probabilistic behaviors of multiple source models.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;assets/exp.png&#34; alt=&#34;InfiFPO&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Comprehensive experiments on 11 widely-used benchmarks demonstrate that &lt;strong&gt;InfiFPO&lt;/strong&gt; consistently outperforms existing model fusion and preference optimization methods. When using Phi-4 as the pivot model, &lt;strong&gt;InfiFPO&lt;/strong&gt; improve its average performance from 79.95 to 83.33 on 11 benchmarks, significantly improving its capabilities in mathematics, coding, and reasoning tasks.&lt;/p&gt;</description>
     </item>

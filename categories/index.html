@@ -55,6 +55,13 @@
             </a>
         </div>
         
+        
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
         <div class="nav-menu">
             
                 
@@ -100,6 +107,38 @@
         </div>
     </div>
 </nav>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    navToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+    });
+    
+    
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        });
+    });
+    
+    
+    document.addEventListener('click', function(e) {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+    });
+});
+</script>
     
     <main class="page-content">
         
@@ -108,7 +147,7 @@
     <header class="taxonomy-header">
       <h1 class="taxonomy-title">Categories</h1>
       <p class="taxonomy-description">
-        6 articles tagged with "Categories"
+        5 articles tagged with "Categories"
       </p>
     </header>
 
@@ -119,7 +158,7 @@
         <article class="article-card">
           <div class="article-meta">
             
-            <time class="article-date">2025-04-19</time>
+            <time class="article-date">2025-08-05</time>
           </div>
           
           <h2 class="article-title">
@@ -138,7 +177,7 @@
         <article class="article-card">
           <div class="article-meta">
             
-            <time class="article-date">2025-04-19</time>
+            <time class="article-date">2025-08-05</time>
           </div>
           
           <h2 class="article-title">
@@ -157,7 +196,7 @@
         <article class="article-card">
           <div class="article-meta">
             
-            <time class="article-date">2025-04-19</time>
+            <time class="article-date">2025-08-05</time>
           </div>
           
           <h2 class="article-title">
@@ -206,25 +245,6 @@
           
           <div class="article-footer">
             <a href="http://infixai.github.io/categories/human-computer-interaction/" class="read-more">
-              Read More →
-            </a>
-          </div>
-        </article>
-        
-        <article class="article-card">
-          <div class="article-meta">
-            
-            <time class="article-date">2024-12-20</time>
-          </div>
-          
-          <h2 class="article-title">
-            <a href="http://infixai.github.io/categories/publications/">Publications</a>
-          </h2>
-          
-          
-          
-          <div class="article-footer">
-            <a href="http://infixai.github.io/categories/publications/" class="read-more">
               Read More →
             </a>
           </div>
