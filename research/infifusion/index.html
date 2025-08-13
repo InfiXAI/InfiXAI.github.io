@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-<title>InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion | InfiX-AI</title>
+<title>InfiFusion: A Unified Framework for Enhanced Cross-Model Reasoning via LLM Fusion | InfiX-AI</title>
 <meta name="description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
-<meta name="keywords" content="Graph Neural Networks,Model Fusion,Gromov-Wasserstein">
-<meta name="author" content="Yuanyi Wang et al.">
+<meta name="keywords" content="Unified Fusion,Model Fusion,Pairwise Fusion">
+<meta name="author" content="Zhaoyi Yan et al.">
 
 
-<meta property="og:title" content="InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion">
+<meta property="og:title" content="InfiFusion: A Unified Framework for Enhanced Cross-Model Reasoning via LLM Fusion">
 <meta property="og:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
 <meta property="og:type" content="article">
-<meta property="og:url" content="http://infixai.github.io/research/infigfusion/">
+<meta property="og:url" content="http://infixai.github.io/research/infifusion/">
 <meta property="og:site_name" content="InfiX-AI">
 
 
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion">
+<meta name="twitter:title" content="InfiFusion: A Unified Framework for Enhanced Cross-Model Reasoning via LLM Fusion">
 <meta name="twitter:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
 
 
 
-<link rel="canonical" href="http://infixai.github.io/research/infigfusion/">
+<link rel="canonical" href="http://infixai.github.io/research/infifusion/">
 
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -156,13 +156,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="research-article-category" data-category="publication">
                     PUBLICATION
                 </span>
-                <time class="research-article-date" datetime="2025-05-20">
-                    May 20, 2025
+                <time class="research-article-date" datetime="2025-02-17">
+                    February 17, 2025
                 </time>
             </div>
             
             
-            <h1 class="research-article-title">InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion</h1>
+            <h1 class="research-article-title">InfiFusion: A Unified Framework for Enhanced Cross-Model Reasoning via LLM Fusion</h1>
             
             
             
@@ -171,11 +171,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             <div class="research-article-tags">
                 
-                    <span class="research-article-tag">Graph Neural Networks</span>
+                    <span class="research-article-tag">Unified Fusion</span>
                 
                     <span class="research-article-tag">Knowledge Distillation</span>
-                
-                    <span class="research-article-tag">Gromov-Wasserstein</span>
                 
                     <span class="research-article-tag">Model Fusion</span>
                 
@@ -187,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             <div class="research-article-links">
                 
-                <a href="https://arxiv.org/abs/2505.13893" target="_blank" rel="noopener noreferrer" class="research-external-link research-arxiv-link">
+                <a href="https://arxiv.org/abs/2501.02795" target="_blank" rel="noopener noreferrer" class="research-external-link research-arxiv-link">
                     <svg class="research-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                         <polyline points="14,2 14,8 20,8"/>
@@ -200,17 +198,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 
                 
-                <a href="https://github.com/InfiXAI/InfiGFusion" target="_blank" rel="noopener noreferrer" class="research-external-link research-github-link">
-                    <svg class="research-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 19c-5 0-8-3-8-8 0-5.5 2.5-10 7-10 3.5 0 6.5 2.5 7 6.5 0 .5.5 1 1 1s1-.5 1-1c-.5-5-4.5-8.5-9-8.5-6 0-10 5-10 11 0 6 4 10 10 10 2 0 4-.5 5.5-1.5"/>
-                        <path d="M15 7h4l-4-4"/>
-                    </svg>
-                    View on GitHub
-                </a>
                 
                 
-                
-                <a href="https://huggingface.co/InfiX-ai/InfiGFusion-14B" target="_blank" rel="noopener noreferrer" class="research-external-link research-huggingface-link">
+                <a href="https://huggingface.co/InfiX-ai/InfiFusion-14B" target="_blank" rel="noopener noreferrer" class="research-external-link research-huggingface-link">
                     <svg class="research-link-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <circle cx="12" cy="12" r="10"/>
                         <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
@@ -225,11 +215,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         
         <article class="research-article-content">
-            <p><strong>InfiGFusion</strong> is the first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs. We introduce a novel Graph-on-Logits Distillation (GLD) loss that captures cross-dimension interactions via co-activation graphs and aligns them using an efficient, provable approximation of Gromov-Wasserstein distance (reducing complexity from O(n^4) to O(nlogn)). Our released <strong>InfiGFusion-14B</strong> model consistently shows better performance, achieving +35.6 on Multistep Arithmetic and +37.06 on Causal Judgement over SFT, demonstrating superior multi-step and complex logic inference.</p>
+            <p><strong>InfiFusion</strong> is the first fusion framework for large language models that fuse up to 4 models with 14B~24B parameters. We introduce a unified framework which can fuse many heterogeneous models
+in one distillation stage. InfiFusion outperforms the state-of-the-art models, such as Qwen-2.5-14B-Instruct and Phi-4, across 11 widely applied benchmarks covering reasoning, coding, mathematics, and instruction-following tasks. Notably, InfiFusion achieves this superior performance while significantly reduces
+computational costs, completing full training with only 160 H800 GPU hours compared to the millions typically required for traditional LLM training.</p>
 <h2 id="-news">🎉 News</h2>
-<p>🎉 The ckpt model, InfiGFusion-14B, has been released on Huggingface! ! !</p>
+<p>🎉 We&rsquo;ve retrain infiFusion using new data (refer to <strong>Training Data</strong>). The ckpt model, InfiFusion-14B, has been released on Huggingface! ! !</p>
 <h2 id="-fusion-framework">🎨 Fusion Framework</h2>
-<p><img src="assets/framework.png" alt="InfiGFusion_framework"></p>
+<img src="https://cdn-uploads.huggingface.co/production/uploads/676279cf57e77fe6e0d3a09a/1hpClyRzIk9UnT8XIKU71.png" width="800">
 <h2 id="-model-summary">📕 Model Summary</h2>
 <table>
   <thead>
@@ -245,7 +237,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </tr>
       <tr>
           <td><strong>Description</strong></td>
-          <td>InfiGFusion is an open fusion model series designed to fuse multiple domain LLMs into a single LLM. It excels in multi-step and relational inference, enabling robust performance across complex reasoning tasks.</td>
+          <td>InfiFusion is our first work on fusing multiple domain LLMs into a single LLM.</td>
       </tr>
       <tr>
           <td><strong>Architecture</strong></td>
@@ -265,7 +257,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </tr>
       <tr>
           <td><strong>Fusing time</strong></td>
-          <td>195 hours</td>
+          <td>160 hours</td>
       </tr>
       <tr>
           <td><strong>Fusing data</strong></td>
@@ -277,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </tr>
       <tr>
           <td><strong>Status</strong></td>
-          <td>Pivot model trained on an offline dataset</td>
+          <td>Static model trained on an offline dataset</td>
       </tr>
       <tr>
           <td><strong>License</strong></td>
@@ -296,11 +288,11 @@ document.addEventListener('DOMContentLoaded', function() {
   <tbody>
       <tr>
           <td><strong>Primary Use Cases</strong></td>
-          <td><code>InfiGFusion</code> is designed to accelerate research on language model fusion and serve as a foundation for generative AI-powered features. It is suitable for building general-purpose AI systems and applications (primarily in English), especially in scenarios that require:<br><br>1. Operation in memory- or compute-constrained environments.<br>2. Low-latency inference.<br>3. Advanced reasoning and logical inference.</td>
+          <td><code>InfiFusion</code> is designed to accelerate research on language model fusion and serve as a foundation for generative AI-powered features. It is suitable for building general-purpose AI systems and applications (primarily in English), especially in scenarios that require:<br><br>1. Operation in memory- or compute-constrained environments.<br>2. Low-latency inference.<br>3. Advanced reasoning and logical inference.</td>
       </tr>
       <tr>
           <td><strong>Out-of-Scope Use Cases</strong></td>
-          <td><code>InfiGFusion</code> is not specifically optimized or evaluated for all downstream tasks. As such:<br><br>1. Developers should consider the general limitations of language models and carefully evaluate performance, safety, and fairness before deploying in sensitive or high-stakes applications.<br>2. Use of the model must comply with all applicable laws and regulations (e.g., data privacy, export controls), particularly given its English-language focus.<br>3. This Model Card does not alter or restrict the terms of the model’s open-source license.</td>
+          <td><code>InfiFusion</code> is not specifically optimized or evaluated for all downstream tasks. As such:<br><br>1. Developers should consider the general limitations of language models and carefully evaluate performance, safety, and fairness before deploying in sensitive or high-stakes applications.<br>2. Use of the model must comply with all applicable laws and regulations (e.g., data privacy, export controls), particularly given its English-language focus.<br>3. This Model Card does not alter or restrict the terms of the model’s open-source license.</td>
       </tr>
   </tbody>
 </table>
@@ -400,8 +392,8 @@ For MBPP, we utilize EvalPlus for a more rigorous assessment of LLM-generated co
 </table>
 <h2 id="-usage">🚀 Usage</h2>
 <h3 id="input-formats">Input Formats</h3>
-<p>Our fusion process uses <a href="https://huggingface.co/microsoft/phi-4">phi-4</a> as the <strong>pivot model</strong>, and thus <strong>InfiGFusion shares the same prompt format and usage style</strong> as <code>phi-4</code>.</p>
-<p>Given the nature of the training data, <code>InfiGFusion</code> performs best when used with prompts in the following chat-style format:</p>
+<p>Our fusion process uses <a href="https://huggingface.co/microsoft/phi-4">phi-4</a> as the <strong>pivot model</strong>, and thus <strong>InfiFusion shares the same prompt format and usage style</strong> as <code>phi-4</code>.</p>
+<p>Given the nature of the training data, <code>InfiFusion</code> performs best when used with prompts in the following chat-style format:</p>
 <div class="highlight"><div style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="background-color:#fff;-moz-tab-size:2;-o-tab-size:2;tab-size:2;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -443,7 +435,7 @@ For MBPP, we utilize EvalPlus for a more rigorous assessment of LLM-generated co
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>pipeline <span style="color:#0550ae">=</span> transformers<span style="color:#0550ae">.</span>pipeline<span style="color:#1f2328">(</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#0a3069">&#34;text-generation&#34;</span><span style="color:#1f2328">,</span>
-</span></span><span style="display:flex;"><span>    model<span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;InfiGFusion&#34;</span><span style="color:#1f2328">,</span>  <span style="color:#57606a"># replace with actual model path</span>
+</span></span><span style="display:flex;"><span>    model<span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;InfiFusion&#34;</span><span style="color:#1f2328">,</span>  <span style="color:#57606a"># replace with actual model path</span>
 </span></span><span style="display:flex;"><span>    model_kwargs<span style="color:#0550ae">=</span><span style="color:#1f2328">{</span><span style="color:#0a3069">&#34;torch_dtype&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;auto&#34;</span><span style="color:#1f2328">},</span>
 </span></span><span style="display:flex;"><span>    device_map<span style="color:#0550ae">=</span><span style="color:#0a3069">&#34;auto&#34;</span><span style="color:#1f2328">,</span>
 </span></span><span style="display:flex;"><span><span style="color:#1f2328">)</span>
@@ -458,15 +450,15 @@ For MBPP, we utilize EvalPlus for a more rigorous assessment of LLM-generated co
 </span></span></code></pre></td></tr></table>
 </div>
 </div><blockquote>
-<p>📌 <em>Note: Since InfiGFusion uses <code>phi-4</code> as its pivot model during fusion, it inherits many of its usage patterns and prompt compatibility features.</em></p></blockquote>
+<p>📌 <em>Note: Since InfiFusion uses <code>phi-4</code> as its pivot model during fusion, it inherits many of its usage patterns and prompt compatibility features.</em></p></blockquote>
 <h2 id="-model-quality">🎯 Model Quality</h2>
-<p><img src="assets/inference.png" alt="InfiGFusion"></p>
+<img src="https://cdn-uploads.huggingface.co/production/uploads/676279cf57e77fe6e0d3a09a/H2B9T4dtpFxOgxTZ3RpkP.png" width="800">
 <h2 id="-responsible-ai-considerations">✅ Responsible AI Considerations</h2>
-<p>Like other large language models, <code>InfiGFusion</code> may exhibit behaviors that raise concerns around fairness, safety, and reliability. While our fusion framework enhances reasoning and relational inference, the foundation models it integrates—including the pivot model <code>phi-4</code>—carry inherited limitations. Users should be aware of the following considerations:</p>
+<p>Like other large language models, <code>InfiFusion</code> may exhibit behaviors that raise concerns around fairness, safety, and reliability. While our fusion framework enhances reasoning and relational inference, the foundation models it integrates—including the pivot model <code>phi-4</code>—carry inherited limitations. Users should be aware of the following considerations:</p>
 <ul>
 <li>
 <p><strong>Language Coverage &amp; Bias:</strong>
-InfiGFusion is primarily trained and evaluated on English datasets. Its performance on non-English inputs may be degraded. Moreover, any biases or stereotypes present in the underlying models or datasets may be preserved or amplified through the fusion process.</p>
+InfiFusion is primarily trained and evaluated on English datasets. Its performance on non-English inputs may be degraded. Moreover, any biases or stereotypes present in the underlying models or datasets may be preserved or amplified through the fusion process.</p>
 </li>
 <li>
 <p><strong>Representation of Harms &amp; Perpetuation of Stereotypes:</strong>
@@ -478,20 +470,20 @@ The model may generate inappropriate, offensive, or unsafe content, especially i
 </li>
 <li>
 <p><strong>Fused Behavior Complexity:</strong>
-Due to the fusion of multiple distinct models, <code>InfiGFusion</code> may exhibit complex or emergent behaviors not present in any single model. This makes interpretability and debugging more challenging, especially in high-risk applications.</p>
+Due to the fusion of multiple distinct models, <code>InfiFusion</code> may exhibit complex or emergent behaviors not present in any single model. This makes interpretability and debugging more challenging, especially in high-risk applications.</p>
 </li>
 <li>
 <p><strong>Factuality &amp; Hallucination:</strong>
-Like other generative models, <code>InfiGFusion</code> may produce convincing yet factually incorrect or outdated content. Developers should not rely on model output as a source of truth and are encouraged to integrate verification mechanisms such as Retrieval-Augmented Generation (RAG).</p>
+Like other generative models, <code>InfiFusion</code> may produce convincing yet factually incorrect or outdated content. Developers should not rely on model output as a source of truth and are encouraged to integrate verification mechanisms such as Retrieval-Augmented Generation (RAG).</p>
 </li>
 <li>
 <p><strong>Code Generation Limitations:</strong>
-While <code>InfiGFusion</code> includes training on code-related datasets, it may still produce invalid, unsafe, or incomplete code snippets. Outputs involving unfamiliar libraries or languages should be carefully reviewed before use.</p>
+While <code>InfiFusion</code> includes training on code-related datasets, it may still produce invalid, unsafe, or incomplete code snippets. Outputs involving unfamiliar libraries or languages should be carefully reviewed before use.</p>
 </li>
 </ul>
 <hr>
 <h3 id="developer-responsibilities">Developer Responsibilities</h3>
-<p>Developers using <code>InfiGFusion</code> are encouraged to:</p>
+<p>Developers using <code>InfiFusion</code> are encouraged to:</p>
 <ul>
 <li><strong>Evaluate outputs contextually</strong>, particularly for fairness, accuracy, and safety.</li>
 <li><strong>Follow all applicable laws and regulations</strong>, including those relating to privacy, trade compliance, and data use.</li>
@@ -501,10 +493,10 @@ While <code>InfiGFusion</code> includes training on code-related datasets, it ma
 <p>By using this model, you agree to evaluate and manage risks responsibly and ensure your applications align with ethical and regulatory expectations.</p>
 <h2 id="-bibtex-citation">🗒️ BibTex Citation</h2>
 <p>If you find this work helpful, feel free to give us a cite.</p>
-<pre tabindex="0"><code class="language-bigquery" data-lang="bigquery">@article{wang2025infigfusion,
-  title={InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion},
-  author={Wang, Yuanyi and Yan, Zhaoyi and Zhang, Yiming and Zhou, Qi and Gu, Yanggan and Wu, Fei and Yang, Hongxia},
-  journal={arXiv preprint arXiv:2505.13893},
+<pre tabindex="0"><code class="language-bigquery" data-lang="bigquery">@article{yan2025infifusion,
+  title={InfiFusion: A Unified Framework for Enhanced Cross-Model Reasoning via LLM Fusion},
+  author={Zhaoyi Yan, Yiming Zhang, Baoyi He, Yuhao Fu, Qi Zhou, Zhijie Sang, Chunlin Ji, Shengyu Zhang, Fei Wu, Hongxia Yang},
+  journal={arXiv preprint arXiv:2501.02795},
   year={2025}
 }
 </code></pre>

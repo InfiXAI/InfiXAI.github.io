@@ -6,7 +6,7 @@
     <description>Recent content on InfiX-AI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Aug 2025 19:11:00 +0000</lastBuildDate>
     <atom:link href="http://infixai.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization</title>
@@ -35,6 +35,27 @@
       <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
       <guid>http://infixai.github.io/research/infigfusion/</guid>
       <description>&lt;p&gt;&lt;strong&gt;InfiGFusion&lt;/strong&gt; is the first structure-aware fusion framework for large language models that models semantic dependencies among logits using feature-level graphs. We introduce a novel Graph-on-Logits Distillation (GLD) loss that captures cross-dimension interactions via co-activation graphs and aligns them using an efficient, provable approximation of Gromov-Wasserstein distance (reducing complexity from O(n^4) to O(nlogn)). Our released &lt;strong&gt;InfiGFusion-14B&lt;/strong&gt; model consistently shows better performance, achieving +35.6 on Multistep Arithmetic and +37.06 on Causal Judgement over SFT, demonstrating superior multi-step and complex logic inference.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>InfiFusion: A Unified Framework for Enhanced Cross-Model Reasoning via LLM Fusion</title>
+      <link>http://infixai.github.io/research/infifusion/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/research/infifusion/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;InfiFusion&lt;/strong&gt; is the first fusion framework for large language models that fuse up to 4 models with 14B~24B parameters. We introduce a unified framework which can fuse many heterogeneous models&#xA;in one distillation stage. InfiFusion outperforms the state-of-the-art models, such as Qwen-2.5-14B-Instruct and Phi-4, across 11 widely applied benchmarks covering reasoning, coding, mathematics, and instruction-following tasks. Notably, InfiFusion achieves this superior performance while significantly reduces&#xA;computational costs, completing full training with only 160 H800 GPU hours compared to the millions typically required for traditional LLM training.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>InfiGUI-G1-3B</title>
+      <link>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-3B</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-3B</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>InfiGUI-G1-7B</title>
+      <link>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B</guid>
+      <description></description>
     </item>
     <item>
       <title>android_control_test</title>

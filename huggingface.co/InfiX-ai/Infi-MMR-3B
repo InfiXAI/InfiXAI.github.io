@@ -202,6 +202,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             
             
+            <a href="http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B" class="nav-link nav-next">
+                InfiGUI-G1-7B →
+            </a>
+            
         </nav>
     </article>
 </div>

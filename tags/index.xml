@@ -6,8 +6,36 @@
     <description>Recent content in Tags on InfiX-AI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Aug 2025 19:11:00 +0000</lastBuildDate>
     <atom:link href="http://infixai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Error Recovery</title>
+      <link>http://infixai.github.io/tags/error-recovery/</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/error-recovery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GUI Agent</title>
+      <link>http://infixai.github.io/tags/gui-agent/</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/gui-agent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Multimodal</title>
+      <link>http://infixai.github.io/tags/multimodal/</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/multimodal/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Planning</title>
+      <link>http://infixai.github.io/tags/planning/</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/planning/</guid>
+      <description></description>
+    </item>
     <item>
       <title>AI Research</title>
       <link>http://infixai.github.io/tags/ai-research/</link>
@@ -20,13 +48,6 @@
       <link>http://infixai.github.io/tags/computer-vision/</link>
       <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
       <guid>http://infixai.github.io/tags/computer-vision/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GUI Agent</title>
-      <link>http://infixai.github.io/tags/gui-agent/</link>
-      <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
-      <guid>http://infixai.github.io/tags/gui-agent/</guid>
       <description></description>
     </item>
     <item>
@@ -76,13 +97,6 @@
       <link>http://infixai.github.io/tags/gui-interaction/</link>
       <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
       <guid>http://infixai.github.io/tags/gui-interaction/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Multimodal</title>
-      <link>http://infixai.github.io/tags/multimodal/</link>
-      <pubDate>Thu, 31 Jul 2025 11:50:11 +0000</pubDate>
-      <guid>http://infixai.github.io/tags/multimodal/</guid>
       <description></description>
     </item>
     <item>
@@ -156,13 +170,6 @@
       <description></description>
     </item>
     <item>
-      <title>Error Recovery</title>
-      <link>http://infixai.github.io/tags/error-recovery/</link>
-      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
-      <guid>http://infixai.github.io/tags/error-recovery/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Graph-on-Logits</title>
       <link>http://infixai.github.io/tags/graph-on-logits/</link>
       <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
@@ -202,13 +209,6 @@
       <link>http://infixai.github.io/tags/model-fusion/</link>
       <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
       <guid>http://infixai.github.io/tags/model-fusion/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Planning</title>
-      <link>http://infixai.github.io/tags/planning/</link>
-      <pubDate>Thu, 31 Jul 2025 11:37:44 +0000</pubDate>
-      <guid>http://infixai.github.io/tags/planning/</guid>
       <description></description>
     </item>
     <item>
@@ -265,6 +265,13 @@
       <link>http://infixai.github.io/tags/large-language-models/</link>
       <pubDate>Tue, 20 May 2025 00:00:00 +0000</pubDate>
       <guid>http://infixai.github.io/tags/large-language-models/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unified Fusion</title>
+      <link>http://infixai.github.io/tags/unified-fusion/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://infixai.github.io/tags/unified-fusion/</guid>
       <description></description>
     </item>
     <item>

@@ -6,8 +6,22 @@
     <description>Recent content in Models on InfiX-AI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 31 Jul 2025 11:37:44 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Aug 2025 19:11:00 +0000</lastBuildDate>
     <atom:link href="http://infixai.github.io/models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InfiGUI-G1-3B</title>
+      <link>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-3B</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-3B</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>InfiGUI-G1-7B</title>
+      <link>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B</guid>
+      <description></description>
+    </item>
     <item>
       <title>Infi-MMR-3B</title>
       <link>http://infixai.github.io/huggingface.co/InfiX-ai/Infi-MMR-3B</link>

@@ -36,6 +36,30 @@
       "categories": null
     },
     {
+      "title": "InfiFusion: A Unified Framework for Enhanced Cross-Model Reasoning via LLM Fusion",
+      "url": "http://infixai.github.io/research/infifusion/",
+      "date": "2025-02-17",
+      "description": "\u003cp\u003e\u003cstrong\u003eInfiFusion\u003c/strong\u003e is the first fusion framework for large language models that fuse up to 4 models with 14B~24B parameters. We introduce a unified framework which can fuse many heterogeneous models\nin one distillation stage. InfiFusion outperforms the state-of-the-art models, such as Qwen-2.5-14B-Instruct and Phi-4, across 11 widely applied benchmarks covering reasoning, coding, mathematics, and instruction-following tasks. Notably, InfiFusion achieves this superior performance while significantly reduces\ncomputational costs, completing full training with only 160 H800 GPU hours compared to the millions typically required for traditional LLM training.\u003c/p\u003e",
+      "tags": ["Unified Fusion","Knowledge Distillation","Model Fusion","Large Language Models"],
+      "categories": null
+    },
+    {
+      "title": "InfiGUI-G1-3B",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-3B",
+      "date": "2025-08-11",
+      "description": "A novel policy optimization framework for multimodal large language models that addresses semantic alignment challenges in GUI grounding.",
+      "tags": ["GUI agent","multimodal","planning","error recovery"],
+      "categories": null
+    },
+    {
+      "title": "InfiGUI-G1-7B",
+      "url": "http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B",
+      "date": "2025-08-11",
+      "description": "A novel policy optimization framework for multimodal large language models that addresses semantic alignment challenges in GUI grounding.",
+      "tags": ["GUI agent","multimodal","planning","error recovery"],
+      "categories": null
+    },
+    {
       "title": "android_control_test",
       "url": "http://infixai.github.io/huggingface.co/datasets/InfiX-ai/android_control_test",
       "date": "2025-07-31",

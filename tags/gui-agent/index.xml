@@ -6,7 +6,7 @@
     <description>Recent content in GUI Agent on InfiX-AI</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Aug 2025 19:11:00 +0000</lastBuildDate>
     <atom:link href="http://infixai.github.io/tags/gui-agent/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>InfiGUI-G1: Advancing GUI Grounding with Adaptive Exploration Policy Optimization</title>
@@ -21,6 +21,20 @@
       <pubDate>Sat, 19 Apr 2025 00:00:00 +0000</pubDate>
       <guid>http://infixai.github.io/research/infigui-r1/</guid>
       <description>InfiGUI-R1 is a multimodal large language model-based GUI agent trained using reinforcement learning to enhance planning and error recovery skills for GUI tasks, achieving state-of-the-art performance on multiple benchmarks.</description>
+    </item>
+    <item>
+      <title>InfiGUI-G1-3B</title>
+      <link>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-3B</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-3B</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>InfiGUI-G1-7B</title>
+      <link>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B</link>
+      <pubDate>Mon, 11 Aug 2025 19:11:00 +0000</pubDate>
+      <guid>http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B</guid>
+      <description></description>
     </item>
     <item>
       <title>InfiGUIAgent-Data</title>

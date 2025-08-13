@@ -5,27 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     
-<title>Knowledge Distillation | InfiX-AI</title>
-<meta name="description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
+<title>InfiGUI-G1-7B | InfiX-AI</title>
+<meta name="description" content="A novel policy optimization framework for multimodal large language models that addresses semantic alignment challenges in GUI grounding.">
 <meta name="keywords" content="">
 <meta name="author" content="InfiX.ai Team">
 
 
-<meta property="og:title" content="Knowledge Distillation">
-<meta property="og:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
-<meta property="og:type" content="website">
-<meta property="og:url" content="http://infixai.github.io/tags/knowledge-distillation/">
+<meta property="og:title" content="InfiGUI-G1-7B">
+<meta property="og:description" content="A novel policy optimization framework for multimodal large language models that addresses semantic alignment challenges in GUI grounding.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B">
 <meta property="og:site_name" content="InfiX-AI">
 
 
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Knowledge Distillation">
-<meta name="twitter:description" content="InfiX.ai Team Blog - GenAI for all, Intelligence in every task">
+<meta name="twitter:title" content="InfiGUI-G1-7B">
+<meta name="twitter:description" content="A novel policy optimization framework for multimodal large language models that addresses semantic alignment challenges in GUI grounding.">
 
 
 
-<link rel="canonical" href="http://infixai.github.io/tags/knowledge-distillation/">
+<link rel="canonical" href="http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-7B">
 
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -142,65 +142,74 @@ document.addEventListener('DOMContentLoaded', function() {
     
     <main class="page-content">
         
-<div class="taxonomy-page">
-  <div class="container">
-    <header class="taxonomy-header">
-      <h1 class="taxonomy-title">Knowledge Distillation</h1>
-      <p class="taxonomy-description">
-        2 articles tagged with "Knowledge Distillation"
-      </p>
-    </header>
-
-    
-    <div class="taxonomy-articles">
-      <div class="articles-grid">
-        
-        <article class="article-card">
-          <div class="article-meta">
-            
-            <span class="article-category">PUBLICATION</span>
-            
-            <time class="article-date">2025-05-20</time>
-          </div>
-          
-          <h2 class="article-title">
-            <a href="http://infixai.github.io/research/infigfusion/">InfiGFusion: Graph-on-Logits Distillation via Efficient Gromov-Wasserstein for Model Fusion</a>
-          </h2>
-          
-          
-          
-          <div class="article-footer">
-            <a href="http://infixai.github.io/research/infigfusion/" class="read-more">
-              Read More →
-            </a>
-          </div>
-        </article>
-        
-        <article class="article-card">
-          <div class="article-meta">
-            
-            <span class="article-category">PUBLICATION</span>
-            
-            <time class="article-date">2025-02-17</time>
-          </div>
-          
-          <h2 class="article-title">
-            <a href="http://infixai.github.io/research/infifusion/">InfiFusion: A Unified Framework for Enhanced Cross-Model Reasoning via LLM Fusion</a>
-          </h2>
-          
-          
-          
-          <div class="article-footer">
-            <a href="http://infixai.github.io/research/infifusion/" class="read-more">
-              Read More →
-            </a>
-          </div>
-        </article>
-        
-      </div>
+<div class="hero-gradient hero-small">
+    <div class="container">
+        <h1 class="hero-title">InfiGUI-G1-7B</h1>
     </div>
-    
-  </div>
+</div>
+
+<div class="article-container">
+    <article class="article">
+        <header class="article-header">
+            
+            
+            <div class="post-tags">
+                
+                <span class="tag">GUI agent</span>
+                
+                <span class="tag">multimodal</span>
+                
+                <span class="tag">planning</span>
+                
+                <span class="tag">error recovery</span>
+                
+            </div>
+            
+            
+            
+            <div class="article-meta">
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                    </svg>
+                    August 11, 2025
+                </span>
+                
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                    </svg>
+                    0 min read
+                </span>
+                
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                    </svg>
+                    InfiX.ai Team
+                </span>
+            </div>
+        </header>
+        
+        <div class="article-content">
+            
+        </div>
+        
+        
+        <nav class="article-nav">
+            
+            <a href="http://infixai.github.io/huggingface.co/InfiX-ai/Infi-MMR-3B" class="nav-link nav-prev">
+                ← Infi-MMR-3B
+            </a>
+            
+            
+            
+            <a href="http://infixai.github.io/huggingface.co/InfiX-ai/InfiGUI-G1-3B" class="nav-link nav-next">
+                InfiGUI-G1-3B →
+            </a>
+            
+        </nav>
+    </article>
 </div>
 
     </main>
